@@ -958,7 +958,7 @@ About Style Start
   line-height: 150%;
   color: rgba(13, 12, 11, 0.8);
   margin-top: 16px;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 .about-content .about__btn {
@@ -1998,7 +1998,7 @@ Service Style Start
 .single-service .service-list li {
   font-weight: 500;
   margin-top: 4px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .single-service:hover .service-name a {
@@ -2557,4 +2557,10 @@ header .v-dark.header-defult .main-nav ul li a {
   text-decoration: underline;
   -webkit-transition: all .1s ease;
   transition: all .1s ease;
+}
+
+
+
+.service-list {
+  list-style-type: circle;
 }
