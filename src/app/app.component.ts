@@ -2,7 +2,6 @@ import { AfterViewInit, Component, OnInit, NO_ERRORS_SCHEMA } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { ApiServicesService } from '../services/api-services.service';
-import { CarouselModule } from 'ngx-owl-carousel-o'; // Import CarouselModule
 import emailjs from 'emailjs-com';
 import { FormControl, FormsModule } from '@angular/forms';
 
@@ -15,7 +14,6 @@ import { FormControl, FormsModule } from '@angular/forms';
     CommonModule,    // Required for common directives like NgIf, NgFor
     RouterOutlet,
     RouterModule,
-    CarouselModule,  // Import CarouselModule here
     FormsModule,
     ],
   templateUrl: './app.component.html',
