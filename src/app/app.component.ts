@@ -21,7 +21,7 @@ import { FormControl, FormsModule } from '@angular/forms';
   schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppComponent implements OnInit {
-  title = 'Mohammed Abdul Aziz - Portfolios';
+  title = 'Mohammed Abdul Aziz - Portfolio';
 
   formData = {
     name: '',
