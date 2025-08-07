@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.31 67.48">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #231f20;
+      }
+
+      .cls-1, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        font-family: Fastrun-Outline, Fastrun;
+        font-size: 13.18px;
+      }
+
+      .cls-3 {
+        fill: #cd7128;
+      }
+    </style>
+  </defs>
+  <rect class="cls-3" x="64.67" y="52.74" width="31.47" height="10.64" rx=".98" ry=".98"/>
+  <text class="cls-2" transform="translate(7.58 62.45)"><tspan x="0" y="0">Design &amp; </tspan><tspan x="57.42" y="0">Code</tspan></text>
+  <path class="cls-1" d="M14.25,44.73h18.87l-10.87-29.89-11.43,31.43h-1.64L22.25,10.33l13.07,35.94H14.25v-1.54Z"/>
+  <path class="cls-3" d="M69.5,11.85h0s-10.37,33.95-10.37,33.95c-.31,1.03-1.26,1.65-2.11,1.39h0s10.37-33.95,10.37-33.95c.31-1.03,1.26-1.65,2.11-1.39Z"/>
+  <polyline class="cls-3" points="74.49 42.7 90.58 39.04 90.92 40.54 72.23 44.8"/>
+  <polyline class="cls-1" points="70.39 43.52 86.69 15.32 70.7 15.32 70.7 13.78 89.36 13.78 73.06 41.98"/>
+  <polyline class="cls-1" points="55.97 15.84 39.67 44.04 56.18 44.04 56.18 45.58 37 45.58 53.31 17.38"/>
+  <polyline class="cls-3" points="49.32 19.19 33.89 23.39 33.48 21.9 51.49 17"/>
+</svg>

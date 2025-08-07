@@ -1,6 +1,21 @@
 /*Google Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap");
 /* Modern CSS3 Reset */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+
+:root {
+  --ff-Marcellus: 'Instrument Sans', serif;
+  --ff-red-hat: 'DM Sans', sans-serif;
+  --color-brand: #F55837;
+  --color-black: #0D0C0B;
+}
+
+
 body {
   color: var(--color-black);
   font-family: var(--ff-red-hat);
@@ -19,6 +34,8 @@ h1, h2, h3, h4, h5 {
 
 p {
   font-family: var(--ff-red-hat);
+  font-weight: 500;
+  letter-spacing: 1.5px;
   margin-bottom: 0;
 }
 
@@ -88,12 +105,6 @@ h5 {
   font-size: 24px;
 }
 
-:root {
-  --ff-Marcellus: 'Marcellus', serif;
-  --ff-red-hat: 'Red Hat Display', sans-serif;
-  --color-brand: #F55837;
-  --color-black: #0D0C0B;
-}
 
 /* ==================
 common utilities start
@@ -1201,6 +1212,9 @@ footer style start
 .footer-style-one {
   padding-bottom: 48px;
   background: var(--color-black);
+  background-image: url(../images/footer-shape-2.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .footer-style-one.v-dark {
@@ -2544,19 +2558,20 @@ header .v-dark.header-defult .main-nav ul li a {
 
 .text_gradient {
   display: inline;
-  background: -webkit-gradient(linear, right top, left top, from(var(--color-black)), color-stop(50.91%, var(--color-black)), to(var(--color-black)));
-  background: linear-gradient(270deg, var(--color-black) 0%, var(--color-black) 50.91%, var(--color-black) 100%);
-  -webkit-text-decoration-color: var(--color-black) !important;
-          text-decoration-color: var(--color-black) !important;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0.1);
-  font-variant-numeric: lining-nums proportional-nums;
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  text-decoration: underline;
-  -webkit-transition: all .1s ease;
-  transition: all .1s ease;
+background-image: linear-gradient(to left bottom, #f55837, #f67e0b, #eaa500, #d1c900, #a8eb12);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-variant-numeric: lining-nums proportional-nums;
+-webkit-transition: all .2s ease;
+transition: all .2s ease;
+
+}
+
+.text_gradient_Title {
+color: #000000;
+
+
 }
 
 
@@ -2564,3 +2579,4 @@ header .v-dark.header-defult .main-nav ul li a {
 .service-list {
   list-style-type: circle;
 }
+
