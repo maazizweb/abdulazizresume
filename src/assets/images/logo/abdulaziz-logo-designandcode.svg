@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.11 15.9">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: HelveticaRounded-Bold, 'Helvetica Rounded';
+        font-size: 2.04px;
+        font-weight: 700;
+        letter-spacing: .05em;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #cd7128;
+      }
+
+      .cls-3 {
+        stroke: #cd7128;
+        stroke-width: .25px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        stroke: #242424;
+        stroke-width: .5px;
+      }
+
+      .cls-5 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-6 {
+        fill: #242424;
+        font-family: Montserrat-SemiBold, Montserrat;
+        font-size: 4.3px;
+        font-weight: 600;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-4" x="2.57" y="3.38" width="19.78" height="9.65"/>
+  <rect class="cls-3" x="21.11" y="12.06" width="2.32" height="2.54"/>
+  <rect class="cls-2" x="1.87" y="12.06" width="1.82" height="1.99"/>
+  <rect class="cls-2" x="21.21" y="2.4" width="1.82" height="1.99"/>
+  <rect class="cls-3" x="1.62" y="1.72" width="2.32" height="2.54"/>
+  <text class="cls-6" transform="translate(3.92 8.23)"><tspan x="0" y="0">&lt;</tspan><tspan class="cls-5" x="2.54" y="0">/</tspan><tspan class="cls-7" x="3.96" y="0">AzIZ&gt;</tspan></text>
+  <text class="cls-1" transform="translate(4.26 10.37)"><tspan x="0" y="0">Design &amp; Code</tspan></text>
+</svg>
