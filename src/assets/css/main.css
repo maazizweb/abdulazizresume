@@ -829,7 +829,7 @@ Hero Style end
 intro Style Start
 ==================*/
 .intro-style-one {
-  background: #F55837;
+  background: var(--color-brand);
   color: #fff;
 }
 

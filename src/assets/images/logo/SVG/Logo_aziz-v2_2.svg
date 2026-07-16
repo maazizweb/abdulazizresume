@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295.51 107.18">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: #252525;
+      }
+
+      .cls-1, .cls-5, .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-7 {
+        font-family: TeroxiaDemoPersonalUse, 'Teroxia Demo';
+        font-size: 56.49px;
+      }
+
+      .cls-2 {
+        letter-spacing: .01em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-8, .cls-5 {
+        fill: #88bf3d;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        letter-spacing: -.02em;
+      }
+    </style>
+  </defs>
+  <text class="cls-7" transform="translate(85.63 69.81) scale(1.81 1)"><tspan class="cls-2" x="0" y="0">A</tspan><tspan class="cls-4" x="41.35" y="0">z</tspan><tspan class="cls-8" x="71.27" y="0">i</tspan><tspan class="cls-3" x="85.88" y="0">z</tspan></text>
+  <rect class="cls-1" x=".55" y="11.09" width="79.19" height="79.01" rx="17.39" ry="17.39"/>
+  <g>
+    <polygon class="cls-5" points="49.25 70.75 43.46 66.2 38.43 72.61 32.17 67.7 37.25 61.23 43.03 65.78 48.07 59.37 53.71 63.8 58.09 58.22 51.83 53.31 56.05 47.94 49.82 43.04 54.9 36.58 61.15 41.5 56.94 46.86 63.17 51.76 58.62 57.55 64.87 62.46 59.79 68.93 54.16 64.5 49.25 70.75"/>
+    <g>
+      <rect class="cls-6" x="17.23" y="29" width="12.81" height="31.14" rx="6.38" ry="6.38" transform="translate(-8.33 5.54) rotate(-11.38)"/>
+      <rect class="cls-6" x="26.61" y="19.09" width="11.64" height="31.4" rx="5.82" ry="5.82" transform="translate(-3.62 65.82) rotate(-87.74)"/>
+    </g>
+  </g>
+</svg>
