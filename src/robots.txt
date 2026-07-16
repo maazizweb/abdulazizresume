@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azzydev.vercel.app/sitemap.xml
