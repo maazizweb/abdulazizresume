@@ -172,7 +172,7 @@
     $(".main-nav").toggleClass("slidenav");
   });
 
-  $(".header-home .main-nav ul li  a").on("click", function (event) {
+  $(".main-nav ul li a").on("click", function (event) {
     $(".hamburger").removeClass("h-active");
     $(".main-nav").removeClass("slidenav");
   });

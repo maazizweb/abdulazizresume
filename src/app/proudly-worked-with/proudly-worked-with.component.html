@@ -1,0 +1,23 @@
+<!-- ============= Proudly Worked With Style Start ============= -->
+<section class="proudly-worked-with-style-one space-y-top space-y-bottom">
+    <div class="container">
+        <div class="section-heading text-center pw-reveal">
+            <img src="./assets/images/pin.png" alt="pin" class="heading-icon">
+            <h2>Proudly Worked With</h2>
+            <p class="mx-auto">A selection of businesses and products I've partnered with to design, build, and ship
+                digital experiences.</p>
+        </div>
+
+        <div class="worked-with-grid">
+            <a *ngFor="let logo of logos; let i = index" class="worked-with-card pw-reveal"
+                [style.transition-delay]="(0.05 * (i % 8)).toFixed(2) + 's'" href="javascript:void(0)"
+                [attr.title]="logo.name">
+                <div class="worked-with-card__image">
+                    <img [src]="logo.src" [alt]="logo.name" loading="lazy">
+                </div>
+                <span class="worked-with-card__name">{{ logo.name }}</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- ============= Proudly Worked With Style End ============= -->
