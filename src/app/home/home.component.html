@@ -1,75 +1,3 @@
-<div class="preloader animate__animated animate__fadeOut">
-    <div class="preloader-item">
-        <div class="spinner-grow"></div>
-        <p class="mt-3">Crafting Pixels Into Experiences...</p>
-    </div>
-</div>
-<!-- ===============  header area start =============== -->
-<header>
-
-    <div class="header-area header-defult">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-12 align-items-center d-xl-flex d-lg-block">
-                    
-                    <div class=" d-flex justify-content-between align-items-center">
-                       
-                        <a href="/">
-                            <!-- <img src="./assets/images/logo.png" alt="logo"> -->
-                        <img class="w-75" style="width:12rem" src="../assets/images/logo/SVG/Logo_aziz-v2_2.svg" alt="abdulaziz-logo"   >
-                        </a>
-                        <div class="d-flex align-items-center gap-4">
-                            <div class="mobile-menu d-flex ">
-                                <a href="javascript:void(0)" class="hamburger d-block d-xl-none"
-                                    [class.h-active]="mobileMenuOpen" (click)="toggleMobileMenu()">
-                                    <span class="h-top"></span>
-                                    <span class="h-middle"></span>
-                                    <span class="h-bottom"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-9">
-                    <nav class="main-nav float-end" [class.slidenav]="mobileMenuOpen">
-                        <div class="inner-logo d-xl-none text-center">
-                            <a href="#">
-                                <!-- <img src="./assets/images/logo.png" alt="Abdul Aziz"> -->
-                                <h6>Abdul Aziz</h6>
-                            </a>
-                        </div>
-                        <ul class="navigation">
-                            <!-- <li class="has-child-menu"><a href="javascript:void(0)">Home</a><i class="fl flaticon-plus">+</i><ul class="sub-menu"><li><a href="index.html">Home Style 1</a></li><li><a href="index-2.html">Home Style 2</a></li><li class="has-child-menu"><a href="javascript:void(0)">Home</a><i class="fl flaticon-plus">+</i><ul class="sub-menu"><li><a href="index.html">Home Style 1</a></li><li><a href="index-2.html">Home Style 2</a></li></ul></li></ul></li> -->
-                            <li>
-                                <a href="#about" class="section-link" (click)="closeMobileMenu()">About me</a>
-                            </li>
-                            <li>
-                                <a href="#experience" class="section-link" (click)="closeMobileMenu()">Experience</a>
-                            </li>
-                            <li>
-                                <a href="#education" class="section-link" (click)="closeMobileMenu()">Education</a>
-                            </li>
-                            <li>
-                                <a href="#myportfolio" class="section-link" (click)="closeMobileMenu()">Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="#skills" class="section-link" (click)="closeMobileMenu()">Skills</a>
-                            </li>
-
-                            <li>
-                                <a href="#contact" class="section-link" (click)="closeMobileMenu()">Contact</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- ===============  header area end =============== -->
-
-
 <main>
     <!-- ============= Hero Style Start ============= -->
     <section class="hero_style__one">
@@ -80,9 +8,19 @@
                 <h2 class="hero_highlighted__text text_gradient_Title">Frontend <br> Developer </h2>
                 <h4>8+ Years of Expertise in Building <br> Intuitive Digital Experiences</h4>
                 <div class="hero-buttons d-flex flex-wrap align-items-center gap-4 justify-content-center">
-                    <a href="#" title="Hire me" class="btn-rounded-lg ">
-                        <span>Let’s Collaborate</span>
-                    </a>                
+                    <a href="https://www.linkedin.com/in/mdaaziz" target="_blank" rel="noopener" title="LinkedIn"
+                        class="btn-rounded-lg hero-btn-secondary">
+                        <span><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1hXmCMAWSNXMYGLXJmEqTqMtP9zsIL_8S/view"
+                        download="proposed_file_name" title="Download CV" target="_blank" rel="noopener"
+                        class="btn-rounded-lg hero-btn-primary">
+                        <span>Download CV</span>
+                    </a>
+                    <a href="https://github.com/maazizweb" target="_blank" rel="noopener" title="GitHub Profile"
+                        class="btn-rounded-lg hero-btn-secondary">
+                        <span><i class="bi bi-github" aria-hidden="true"></i> GitHub Profile</span>
+                    </a>
                 </div>
                 <a href="#about" class="mouse-icon">
                     <div class="wheel"></div>
@@ -104,7 +42,7 @@
                     <i class="bi bi-chevron-left"></i>
                 </button>
 
-                <div class="tech-stack-track" #techTrack>
+                <div class="tech-stack-track" #techTrack aria-hidden="true">
                     <span class="tech-stack-item tech-svg" title="WordPress" style="--tech-icon: url(/assets/icons/tech/wordpress.svg)"></span>
                     <span class="tech-stack-item tech-svg" title="HTML5" style="--tech-icon: url(/assets/icons/tech/html5.svg)"></span>
                     <span class="tech-stack-item tech-svg" title="CSS3" style="--tech-icon: url(/assets/icons/tech/css3.svg)"></span>
@@ -147,26 +85,26 @@
             <div class="bottom-shadow"></div>
             <div class="showcase__track">
                 <div class="showcase__item">
-                
+
                     <img src="./assets/images/hero-slider/slider-eqt.jpg" alt="image">
-                         <img src="./assets/images/hero-slider/slider-cyberarch.jpg" alt="image"> 
-                    <img src="./assets/images/hero-slider/slider-flashtax.jpg" alt="image">      
-                      <img src="./assets/images/hero-slider/slider-epixel.jpg" alt="image">  
-                      <img src="./assets/images/hero-slider/slider-physiocan.jpg" alt="image">  
-                      <img src="./assets/images/hero-slider/slider-agilehive.jpg" alt="image">  
-                      <img src="./assets/images/hero-slider/slider-sunduspay.jpg" alt="image">  
-                      <img src="./assets/images/hero-slider/slider-paysii.jpg" alt="image">  
-                
+                         <img src="./assets/images/hero-slider/slider-cyberarch.jpg" alt="image">
+                    <img src="./assets/images/hero-slider/slider-flashtax.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-epixel.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-physiocan.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-agilehive.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-sunduspay.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-paysii.jpg" alt="image">
+
                       <!-- REPEAT SLIDER -->
 
-                       <img src="./assets/images/hero-slider/slider-cyberarch.jpg" alt="image">  
+                       <img src="./assets/images/hero-slider/slider-cyberarch.jpg" alt="image">
                     <img src="./assets/images/hero-slider/slider-eqt.jpg" alt="image">
-                    <img src="./assets/images/hero-slider/slider-flashtax.jpg" alt="image">      
-                      <img src="./assets/images/hero-slider/slider-epixel.jpg" alt="image">  
-                      <img src="./assets/images/hero-slider/slider-physiocan.jpg" alt="image">  
-                      <img src="./assets/images/hero-slider/slider-agilehive.jpg" alt="image">  
-                      <img src="./assets/images/hero-slider/slider-sunduspay.jpg" alt="image">  
-                      <img src="./assets/images/hero-slider/slider-paysii.jpg" alt="image"> 
+                    <img src="./assets/images/hero-slider/slider-flashtax.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-epixel.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-physiocan.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-agilehive.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-sunduspay.jpg" alt="image">
+                      <img src="./assets/images/hero-slider/slider-paysii.jpg" alt="image">
                 </div>
             </div>
         </div>
@@ -195,12 +133,12 @@
                         <div class="stats-col__stat reveal-up" style="transition-delay:.05s">
                             <h4><span class="tm_counter" data-from="0" data-to="90" data-speed="1500"
                                     data-decimals="">0</span>+</h4>
-                            <p>Appriciated Work</p>
+                            <p>Appreciated Work</p>
                         </div>
                     </div>
                     <div class="stats-col">
                         <div class="stats-col__stat reveal-up" style="transition-delay:.15s">
-                            <h4><span class="tm_counter" data-from="0" data-to="45" data-speed="1500"
+                            <h4><span class="tm_counter" data-from="0" data-to="30" data-speed="1500"
                                     data-decimals="">0</span>+</h4>
                             <p>Skills</p>
                         </div>
@@ -230,7 +168,7 @@
             <div class="row gy-4 gx-4">
                 <div class="col-lg-5">
                     <div class="author-image wow fadeInDown" data-wow-delay="0.3s">
-                        <img src="./assets/images/aboutus_abdul.png" alt="Abdul Aziz" class="img-fluid mt-3">
+                        <img src="./assets/images/aboutus_abdul.png" alt="Abdul Aziz" class="img-fluid mt-3" loading="lazy">
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -238,9 +176,7 @@
                         <!-- <div class="text-end d-lg-block d-none wow fadeInRight" data-wow-delay="0.6s"><img src="./assets/images/about-2.webp" alt="about image 2"></div> -->
                         <div class="section-heading">
                             <span>About me</span>
-                            <h2> MY LIFE <a href="#">
-                                    <img src="./assets/images/play-circle.png" alt="play-icon">
-                                </a>
+                            <h2> MY LIFE <img src="./assets/images/play-circle.png" alt="" class="d-inline-block">
                                 <br> WITH DESIGNS & CODE
                             </h2>
                         </div>
@@ -268,7 +204,7 @@
     <section class="service-style-one space-y-top space-y-bottom space-y-margin-top" id="experience">
         <div class="container">
             <div class="section-heading pb-5">
-                <img src="./assets/images/pin.png" alt="pin" class="heading-icon">
+                <img src="./assets/images/pin.png" alt="" class="heading-icon">
                 <h2>MY EXPERIENCE</h2>
             </div>
 
@@ -279,8 +215,7 @@
                 </div>
                 <div class="col-md-4">
                     <h4 class="service-name">
-                        <a href="#" data-fx="1" data-img="./assets/images/portfolio/feat-1.webp"
-                            class="block__title">UIUX Designer & Developer</a>
+                        <a href="#" class="block__title">UIUX Designer & Developer</a>
                     </h4>
                     <small>Agile Hive</small>
                 </div>
@@ -305,12 +240,11 @@
             <!-- COMPANY 1 -->
             <div class="row gx-4 gy-3 single-service text-black wow fadeInUp" data-wow-delay="0.2s">
                 <div class="col-md-1">
-                    <h5 class="service-index">01</h5>
+                    <h5 class="service-index">02</h5>
                 </div>
                 <div class="col-md-4">
                     <h4 class="service-name">
-                        <a href="#" data-fx="1" data-img="./assets/images/portfolio/feat-1.webp"
-                            class="block__title">Web Developer (Frontend Developer)</a>
+                        <a href="#" class="block__title">Web Developer (Frontend Developer)</a>
                     </h4>
                     <small>Equity Accounting and Taxation Company LLP</small>
                 </div>
@@ -347,12 +281,11 @@
             <!-- COMPANY 2 -->
             <div class="row gx-4 gy-3 single-service text-black wow fadeInUp" data-wow-delay="0.2s">
                 <div class="col-md-1">
-                    <h5 class="service-index">02</h5>
+                    <h5 class="service-index">03</h5>
                 </div>
                 <div class="col-md-4">
                     <h4 class="service-name">
-                        <a href="#" data-fx="1" data-img="./assets/images/portfolio/feat-1.webp"
-                            class="block__title">Web Developer & Graphic Designer</a>
+                        <a href="#" class="block__title">Web Developer & Graphic Designer</a>
                     </h4>
                     <small>Mn&z Pvt Enterprises Ltd </small>
                 </div>
@@ -377,12 +310,11 @@
             <!-- COMPANY 3 -->
             <div class="row gx-4 gy-3 single-service text-black wow fadeInUp" data-wow-delay="0.2s">
                 <div class="col-md-1">
-                    <h5 class="service-index">03</h5>
+                    <h5 class="service-index">04</h5>
                 </div>
                 <div class="col-md-4">
                     <h4 class="service-name">
-                        <a href="#" data-fx="1" data-img="./assets/images/portfolio/feat-1.webp"
-                            class="block__title">Web Analyst</a>
+                        <a href="#" class="block__title">Web Analyst</a>
                     </h4>
                     <small>Wamp Solutions</small>
                 </div>
@@ -401,12 +333,11 @@
             <!-- COMPANY 4 -->
             <div class="row gx-4 gy-3 single-service text-black wow fadeInUp" data-wow-delay="0.2s">
                 <div class="col-md-1">
-                    <h5 class="service-index">04</h5>
+                    <h5 class="service-index">05</h5>
                 </div>
                 <div class="col-md-4">
                     <h4 class="service-name">
-                        <a href="#" data-fx="1" data-img="./assets/images/portfolio/feat-1.webp"
-                            class="block__title">Web Developer</a>
+                        <a href="#" class="block__title">Web Developer</a>
                     </h4>
                     <small>GP Tax Solutions Private Limited (GPT)</small>
                 </div>
@@ -431,12 +362,11 @@
             <!-- COMPANY 5 -->
             <div class="row gx-4 gy-3 single-service text-black wow fadeInUp" data-wow-delay="0.2s">
                 <div class="col-md-1">
-                    <h5 class="service-index">05</h5>
+                    <h5 class="service-index">06</h5>
                 </div>
                 <div class="col-md-4">
                     <h4 class="service-name">
-                        <a href="#" data-fx="1" data-img="./assets/images/portfolio/feat-1.webp"
-                            class="block__title">Web Developer</a>
+                        <a href="#" class="block__title">Web Developer</a>
                     </h4>
                     <small>Epixel Web</small>
                 </div>
@@ -462,7 +392,7 @@
             <div class="row gy-5 gx-4 intro-style-one rounded">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <img src="./assets/images/pin.png" alt="pin" class="heading-icon">
+                        <img src="./assets/images/pin.png" alt="" class="heading-icon">
                         <h2 class="text-white">MY EDUCATION</h2>
                        
                     </div>
@@ -473,7 +403,7 @@
                             <li>[Aug, 2020]</li>
                         </ul>
                         <h4 class="blog-titles">
-                            <p class="block__title" data-img="./assets/images/portfolio/feat-3.webp">Master of
+                            <p class="block__title">Master of
                                 Technology (M.Tech) - Computer Science Engineering</p>
                         </h4>
                         <p class="blog-disc">Jawaharlal Nehru Technological University, Hyderabad, India.</p>
@@ -483,7 +413,7 @@
                             <li>[Aug, 2013]</li>
                         </ul>
                         <h4 class="blog-titles">
-                            <p class="block__title" data-img="./assets/images/portfolio/feat-3.webp">Bachelor of
+                            <p class="block__title">Bachelor of
                                 Technology (B.Tech) - Computer Science Engineering</p>
                         </h4>
                         <p class="blog-disc">Jawaharlal Nehru Technological University, Hyderabad, India.</p>
@@ -499,7 +429,7 @@
     <!-- <section class="portfolio-style-one space-y-top" id="portfolio">
         <div class="container">
             <div class="section-heading pb-5">
-                <img src="./assets/images/pin.png" alt="pin" class="heading-icon">
+                <img src="./assets/images/pin.png" alt="" class="heading-icon">
                 <h2>FEATURED WORK</h2>
             </div>
         </div>
@@ -863,25 +793,37 @@
     <section class="pricing-style-one space-y-top space-y-bottom bg-surface-base space-y-margin-top" id="skills">
         <div class="container">
             <div class="section-heading pb-5">
-                <img src="./assets/images/pin.png" alt="pin" class="heading-icon">
+                <img src="./assets/images/pin.png" alt="" class="heading-icon">
                 <h2>TECHNICAL SKILLS</h2>
             </div>
             <div class="row gy-4 gx-4">
                 <div class="col-lg-12 wow fadeInUp">
-                    <div class="pricing-card">
+                    <div class="pricing-card skills-card">
                         <div class="pricing-card-header">
                             <div class="pricing-header-content">
                                 <h3 class="card-price">Frontend & Designer Skills</h3>
                             </div>
                             <div class="quality-icon">
-                                <img src="./assets/images/basic.png" alt="pricing quality image">
+                                <img src="./assets/images/basic.png" alt="" role="presentation">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-3" *ngFor="let column of skillColumns">
-                                <ul class="arrow-bullets">
-                                    <li *ngFor="let skill of column" title="Explore Case Studies"
-                                        class="btn-border-border d-block text-start">{{ skill }}</li>
+
+                        <div class="skills-tabs" role="tablist" aria-label="Skill categories">
+                            <button *ngFor="let group of skillGroups; let i = index" type="button" role="tab"
+                                class="skills-tab" [class.active]="activeSkillTab === i"
+                                [attr.aria-selected]="activeSkillTab === i" [id]="'skills-tab-' + i"
+                                [attr.aria-controls]="'skills-panel-' + i" (click)="activeSkillTab = i">
+                                <i class="bi" [ngClass]="group.icon" aria-hidden="true"></i>
+                                <span>{{ group.name }}</span>
+                            </button>
+                        </div>
+
+                        <div class="skills-panels">
+                            <div *ngFor="let group of skillGroups; let i = index" class="skills-panel" role="tabpanel"
+                                [id]="'skills-panel-' + i" [attr.aria-labelledby]="'skills-tab-' + i"
+                                [hidden]="activeSkillTab !== i">
+                                <ul class="skills-grid">
+                                    <li *ngFor="let skill of group.skills" class="skill-chip">{{ skill }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -896,59 +838,102 @@
     <!-- ============= Blog Style Start ============= -->
     <section class="blog-style-one space-y-top" id="myportfolio">
         <div class="container">
-            <div class="row gy-5 gx-4">
-                <div class="col-lg-6">
-                    <div class="section-heading">
-                        <img src="./assets/images/pin.png" alt="pin" class="heading-icon">
-                        <h2>MY PORTFOLIO</h2>
-                        <!-- <p>Compellingly repurpose covalent core competencies for top-line paradigms. <a
-                                href="#">Continually</a> repurpose proactive bandwidth whereas clicksand. Compellingly
-                            repurpose covalent core. </p> -->
-                    </div>
-                    <a routerLink="/worked-with" class="btn-border-border d-inline-block mt-3">View More</a>
-                </div>
-                <div class="col-lg-6 ">
-                    <div class="blog-card wow fadeInUp" data-wow-delay="0.2s">
-                        <ul class="blog-meta">
-                            <li>1</li>
-                        </ul>
-                        <h4 class="blog-title">
-                            <a href="javascript:void(0)" data-fx="1" data-bs-toggle="modal"
-                                data-bs-target="#blogModalEquityTax" class="block__title"
-                                data-img="../assets/images/portfolio-screenshot/EQUITY TAXATION.png">Equity Taxation
-                                LLP</a>
-                        </h4>
-                        <p class="blog-disc">The team at “Equity Taxation Services” provides more than tax planning
-                            services; we provide tax reduction and tax planning strategies that complement our tax
-                            maintenance and other preparation services.</p>
-                    </div>
-                    <div class="blog-card wow fadeInUp" data-wow-delay="0.4s">
-                        <ul class="blog-meta">
-                            <li>2</li>
-                        </ul>
-                        <h4 class="blog-title">
-                            <a href="javascript:void(0)" data-fx="1" data-bs-toggle="modal"
-                                data-bs-target="#blogModalPaysii" class="block__title"
-                                data-img="src\assets\images\portfolio-screenshot\PAYSII.png">Paysii</a>
-                        </h4>
-                        <p class="blog-disc">Beeso and the PaySii trademark represent quality and a strong commitment to
-                            fast, reliable, and affordable money
-                            transmittance service all over the globe..</p>
-                    </div>
-                    <div class="blog-card wow fadeInUp" data-wow-delay="0.6s">
-                        <ul class="blog-meta">
-                            <li>3</li>
-                         
-                        </ul>
-                        <h4 class="blog-title">
-                            <a href="javascript:void(0)" data-fx="1" data-bs-toggle="modal"
-                                data-bs-target="#blogModalAlgad" class="block__title"
-                                data-img="src\assets\images\portfolio-screenshot\ALGAD.png">Algad</a>
-                        </h4>
-                        <p class="blog-disc">IT Firm Services</p>
-                    </div>
-                </div>
+            <div class="section-heading pb-4">
+                <img src="./assets/images/pin.png" alt="" class="heading-icon">
+                <h2>MY PORTFOLIO</h2>
+                <p>A few recent projects — what the client needed, what I did, and what shipped.</p>
             </div>
+
+            <div class="case-study-grid">
+                <article class="case-study-card wow fadeInUp" data-wow-delay="0.2s">
+                    <button type="button" class="case-study-media" data-bs-toggle="modal"
+                        data-bs-target="#blogModalEquityTax" aria-label="View Equity Taxation LLP screenshots">
+                        <img src="../assets/images/portfolio-screenshot/EQUITY TAXATION.png"
+                            alt="Equity Taxation LLP website homepage, desktop view" loading="lazy">
+                    </button>
+                    <div class="case-study-body">
+                        <span class="case-study-tag">Web App &middot; Angular</span>
+                        <h3 class="case-study-title">Equity Taxation LLP</h3>
+                        <dl class="case-study-facts">
+                            <div>
+                                <dt>Problem</dt>
+                                <dd>The firm's site was hard to navigate on mobile and gave clients no easy way to see
+                                    services or get in touch.</dd>
+                            </div>
+                            <div>
+                                <dt>My role</dt>
+                                <dd>Rebuilt the front end end-to-end and delivered a companion CRM dashboard in
+                                    Angular Material for the internal team.</dd>
+                            </div>
+                            <div>
+                                <dt>Outcome</dt>
+                                <dd>A fully responsive site with a clearer service journey, plus an internal CRM the
+                                    team still uses to manage client work.</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="case-study-card wow fadeInUp" data-wow-delay="0.35s">
+                    <button type="button" class="case-study-media" data-bs-toggle="modal"
+                        data-bs-target="#blogModalPaysii" aria-label="View Paysii screenshots">
+                        <img src="../assets/images/portfolio-screenshot/PAYSII.png"
+                            alt="Paysii money transfer website homepage, desktop view" loading="lazy">
+                    </button>
+                    <div class="case-study-body">
+                        <span class="case-study-tag">Fintech &middot; Frontend</span>
+                        <h3 class="case-study-title">Paysii</h3>
+                        <dl class="case-study-facts">
+                            <div>
+                                <dt>Problem</dt>
+                                <dd>A global money-transfer brand needed a site that read as fast, secure, and
+                                    trustworthy at first glance.</dd>
+                            </div>
+                            <div>
+                                <dt>My role</dt>
+                                <dd>Designed and built the responsive front end, translating brand guidelines into
+                                    pixel-accurate, accessible pages.</dd>
+                            </div>
+                            <div>
+                                <dt>Outcome</dt>
+                                <dd>A polished, mobile-friendly site that clearly communicates the service across
+                                    every device.</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </article>
+
+                <article class="case-study-card wow fadeInUp" data-wow-delay="0.5s">
+                    <button type="button" class="case-study-media" data-bs-toggle="modal" data-bs-target="#blogModalAlgad"
+                        aria-label="View Algad screenshots">
+                        <img src="../assets/images/portfolio-screenshot/ALGAD.png"
+                            alt="Algad IT services website homepage, desktop view" loading="lazy">
+                    </button>
+                    <div class="case-study-body">
+                        <span class="case-study-tag">IT Services &middot; Frontend</span>
+                        <h3 class="case-study-title">Algad</h3>
+                        <dl class="case-study-facts">
+                            <div>
+                                <dt>Problem</dt>
+                                <dd>The IT firm needed a professional web presence to showcase its services and
+                                    attract enterprise clients.</dd>
+                            </div>
+                            <div>
+                                <dt>My role</dt>
+                                <dd>Designed and developed the full site — structure, styling, and content layout —
+                                    from the ground up.</dd>
+                            </div>
+                            <div>
+                                <dt>Outcome</dt>
+                                <dd>A credible, professional site that positions the company clearly to prospective
+                                    clients.</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+
+            <a routerLink="/proudly-worked-with" class="btn-border-border d-inline-block mt-4">View More Work</a>
         </div>
         <!-- ============= Client Style Start ============= -->
         <section class="clinet-style-one">
@@ -956,7 +941,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="d-lg-block d-none position-relative">
-                            <img src="./assets/images/pin.png" alt="pin"
+                            <img src="./assets/images/pin.png" alt=""
                                 class="heading-icon position-absolute left-0 top-0 pt-1">
                             <h4 class="client-title text-black"> Proudly work with selected companies </h4>
                         </div>
@@ -969,7 +954,7 @@
                             pagination="false">
                             <swiper-slide *ngFor="let client of clientLogos">
                                 <div class="single-client text-center">
-                                    <img width="226" height="118" [src]="client.src" [alt]="client.alt">
+                                    <img width="226" height="118" [src]="client.src" [alt]="client.alt" loading="lazy">
                                 </div>
                             </swiper-slide>
                         </swiper-container>
@@ -1044,90 +1029,5 @@
     </div>
     <!-- ============= Blog Style end ============= -->
 </main>
-<!-- ============= Footer Style Start ============= -->
-<section class="footer-style-one space-y-top space-y-margin-top" id="contact">
-    <div class="container">
-        <div class="footer-content">
-            <div class="row gy-4 gx-4">
-                <div class="col-lg-6">
-                     <p class="text-white">Start Your Next Dream Project</p>
-                    <h2 class="footer__title"> LET’S GET <br> IN TOUCH </h2>
-                   
-                </div>
-                <div class="col-lg-6">
-                    <form (ngSubmit)="sendEmail(contactForm)" #contactForm="ngForm">
-                        <div class="row gy-4">
-                            <!-- Name Field -->
-                            <div class="col-lg-6">
-                                <div class="contact_input">
-                                    <input type="text" name="name" placeholder="Your Name" [(ngModel)]="formData.name"
-                                        #name="ngModel" required />
-                                    <small class="text-danger" *ngIf="name.invalid && name.touched">
-                                        Name is required.
-                                    </small>
-                                </div>
-                            </div>
-
-                            <!-- Email Field -->
-                            <div class="col-lg-6">
-                                <div class="contact_input">
-                                    <input type="email" name="email" placeholder="Your Email"
-                                        [(ngModel)]="formData.email" #email="ngModel" required />
-                                    <small class="text-danger" *ngIf="email.invalid && email.touched">
-                                        Email is required.
-                                    </small>
-                                </div>
-                            </div>
-
-                            <!-- Message Field -->
-                            <div class="col-lg-12">
-                                <div class="contact_input">
-                                    <textarea cols="20" rows="5" name="message" placeholder="Your Message"
-                                        [(ngModel)]="formData.message" #message="ngModel" required></textarea>
-                                    <small class="text-danger" *ngIf="message.invalid && message.touched">
-                                        Message is required.
-                                    </small>
-                                </div>
-                            </div>
-
-                            <!-- Submit Button -->
-                            <div>
-                                <button type="submit" class="btn-border-border text-white text-start d-inline-block"
-                                    [disabled]="!contactForm.valid">
-                                    Send Message
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-        <div
-            class="footer-bottom-content d-flex align-items-center flex-wrap gap-lg-4 gap-3 flex-column flex-lg-row mt-5">
-            <div class="footer-social-wrap me-lg-auto">
-                <div class="footer-email">
-                    <a href="mailto:ma.aaziz@outlook.com">
-                        <span class="wave">👋</span>ma.aaziz&#64;outlook.com </a>
-                </div>
-            </div>
-            <ul class="footer-social-links text-lg-start text-center">
-                <li>
-                    <a href="https://www.linkedin.com/in/mdaaziz">Linkedin</a>
-                    <span>Connect me!</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!-- ============= Footer Style End ============= -->
-<!-- ============= Custom Cursor ============= -->
-<!-- <div class="cursor-dot-outline"></div>
-<div class="cursor-dot"></div> -->
-<!-- ============= Back To Top ============= -->
-<div class="back-top">
-    <div class="scroll-line"></div>
-    <span class="scoll-text">Go Up</span>
-</div>
 
 

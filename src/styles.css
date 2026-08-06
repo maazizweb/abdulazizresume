@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* ===== Accessible focus states (site-wide) ===== */
+a:focus-visible,
+button:focus-visible,
+.section-link:focus-visible,
+.btn-border-border:focus-visible,
+.btn-rounded-lg:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+.contact_input input:focus-visible,
+.contact_input textarea:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+

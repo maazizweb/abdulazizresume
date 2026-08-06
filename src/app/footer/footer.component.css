@@ -1,0 +1,57 @@
+/* ===== Contact form feedback ===== */
+.contact-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-submit-row button[type="submit"] {
+  background: var(--color-brand);
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  min-width: 200px;
+  padding: 18px 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 24px rgba(245, 88, 55, 0.3);
+}
+
+.contact-submit-row button[type="submit"]:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(245, 88, 55, 0.4);
+}
+
+.contact-submit-row button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.contact-status {
+  margin: 14px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.contact-status.success {
+  color: #1e7e34;
+  background: rgba(30, 126, 52, 0.1);
+}
+
+.contact-status.error {
+  color: #b02a37;
+  background: rgba(176, 42, 55, 0.1);
+}
+
+.footer-social-wrap .footer-email {
+  font-weight: 500;
+  opacity: 0.85;
+}

@@ -12,8 +12,9 @@
             <a *ngFor="let logo of logos; let i = index" class="worked-with-card pw-reveal"
                 [style.transition-delay]="(0.05 * (i % 8)).toFixed(2) + 's'" href="javascript:void(0)"
                 [attr.title]="logo.name">
-                <div class="worked-with-card__image">
-                    <img [src]="logo.src" [alt]="logo.name" loading="lazy">
+                <div class="worked-with-card__image" [class.is-loaded]="loadedImages.has(i)">
+                    <span class="worked-with-card__skeleton" aria-hidden="true"></span>
+                    <img [src]="logo.src" [alt]="logo.name" loading="lazy" (load)="onImageLoad(i)">
                 </div>
                 <span class="worked-with-card__name">{{ logo.name }}</span>
             </a>

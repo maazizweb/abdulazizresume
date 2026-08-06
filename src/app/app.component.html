@@ -1,1 +1,11 @@
+<div class="route-progress" *ngIf="routeLoading" aria-hidden="true"></div>
+
+<div class="preloader animate__animated" [class.animate__fadeOut]="preloaderFadingOut" *ngIf="!preloaderRemoved">
+    <div class="preloader-item">
+        <div class="spinner-grow"></div>
+        <p class="mt-3">Crafting Pixels Into Experiences...</p>
+    </div>
+</div>
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
+<app-footer></app-footer>

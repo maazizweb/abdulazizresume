@@ -8,6 +8,15 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" href="./manifest.json">
   <meta name="google-site-verification" content="xURgd-Lg0AI-1jO5ifeC190QtnpSP5hd7gfCRqiRorE" />
+  <script>
+    // Must run before Angular bootstraps: the browser can restore a
+    // previous scroll offset on load/refresh before any app JS executes,
+    // so setting this from a component lifecycle hook is too late.
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
     <!-- important meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +40,7 @@
 
 </head>
 <body>
+  
   <app-root></app-root>
   
 

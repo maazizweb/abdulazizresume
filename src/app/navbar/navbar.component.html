@@ -1,0 +1,67 @@
+<!-- ===============  header area start =============== -->
+<header>
+
+    <div class="header-area header-defult">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-12 align-items-center d-xl-flex d-lg-block">
+
+                    <div class=" d-flex justify-content-between align-items-center">
+
+                        <a routerLink="/">
+                            <img class="w-75" style="width:12rem" src="../assets/images/logo/SVG/Logo_aziz-v2_2.svg" alt="abdulaziz-logo">
+                        </a>
+                        <div class="d-flex align-items-center gap-4">
+                            <div class="mobile-menu d-flex ">
+                                <a href="javascript:void(0)" class="hamburger d-block d-xl-none"
+                                    [class.h-active]="mobileMenuOpen" (click)="toggleMobileMenu()">
+                                    <span class="h-top"></span>
+                                    <span class="h-middle"></span>
+                                    <span class="h-bottom"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-9">
+                    <nav class="main-nav float-end" [class.slidenav]="mobileMenuOpen">
+                        <div class="inner-logo d-xl-none text-center">
+                            <a routerLink="/">
+                                <h6>Abdul Aziz</h6>
+                            </a>
+                        </div>
+                        <ul class="navigation">
+                            <li>
+                                <a href="/#about" data-section="about" class="section-link"
+                                    (click)="goToSection('about', $event)">About me</a>
+                            </li>
+                            <li>
+                                <a href="/#experience" data-section="experience" class="section-link"
+                                    (click)="goToSection('experience', $event)">Experience</a>
+                            </li>
+                            <li>
+                                <a href="/#education" data-section="education" class="section-link"
+                                    (click)="goToSection('education', $event)">Education</a>
+                            </li>
+                            <li>
+                                <a href="/#myportfolio" data-section="myportfolio" class="section-link"
+                                    (click)="goToSection('myportfolio', $event)">Portfolio</a>
+                            </li>
+                            <li>
+                                <a href="/#skills" data-section="skills" class="section-link"
+                                    (click)="goToSection('skills', $event)">Skills</a>
+                            </li>
+
+                            <li>
+                                <a href="/#contact" data-section="contact" class="section-link"
+                                    (click)="goToSection('contact', $event)">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ===============  header area end =============== -->

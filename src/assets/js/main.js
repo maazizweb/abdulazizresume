@@ -3,20 +3,10 @@
 
    /***********
    Preloader
+   (now handled by AppComponent in app.component.ts, so it only shows
+   once at app root instead of resurfacing on every client-side route
+   change back to a page that renders a .preloader element)
    ************/
-
-  function preLoader() {
-    window.onload = function () {
-      var preloader = document.querySelector(".preloader");
-      if (preloader !== null) {
-        preloader.classList.add("animate__animated", "animate__fadeOut");
-        setTimeout(function () {
-          preloader.style.display = "none";
-        }, 200);
-      }
-    };
-  }
-  preLoader();
 
 
 
@@ -205,38 +195,11 @@
 
    /***********
    Back To Top
+   (now handled by FooterComponent in footer.component.ts, for the same
+   reason as the preloader above — this script runs before Angular has
+   rendered .back-top into the DOM, so the click handler here never
+   actually attached)
    ************/
-   function backToTop() {
-    var scrollpos = window.scrollY;
-    var backBtn = document.querySelector(".back-top");
-
-    if (backBtn !== null) {
-      var addClassOnScroll = function () {
-        backBtn.classList.add("back-top-show");
-      };
-
-      var removeClassOnScroll = function () {
-        backBtn.classList.remove("back-top-show");
-      };
-
-      window.addEventListener("scroll", function () {
-        scrollpos = window.scrollY;
-        if (scrollpos >= 500) {
-          addClassOnScroll();
-        } else {
-          removeClassOnScroll();
-        }
-      });
-
-      backBtn.addEventListener("click", function () {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-    }
-  }
-  backToTop();
 
   /* ========================== 
    WOW JS

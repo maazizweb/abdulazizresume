@@ -30,9 +30,33 @@
 }
 
 .worked-with-card__image {
+  position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #f4f4f4;
+}
+
+.worked-with-card__skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #eee 30%, #f6f6f6 50%, #eee 70%);
+  background-size: 200% 100%;
+  animation: worked-with-shimmer 1.4s ease-in-out infinite;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.worked-with-card__image.is-loaded .worked-with-card__skeleton {
+  opacity: 0;
+}
+
+@keyframes worked-with-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .worked-with-card__image img {
@@ -40,8 +64,13 @@
   height: 100%;
   object-fit: cover;
   object-position: top;
-  transition: transform 0.4s ease;
   display: block;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.4s ease;
+}
+
+.worked-with-card__image.is-loaded img {
+  opacity: 1;
 }
 
 .worked-with-card__name {

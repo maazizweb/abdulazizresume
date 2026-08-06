@@ -2,8 +2,8 @@ import { AfterViewInit, Component, OnInit, NO_ERRORS_SCHEMA, PLATFORM_ID, Inject
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ApiServicesService } from '../../services/api-services.service';
-import emailjs from 'emailjs-com';
-import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { FooterComponent } from '../footer/footer.component';
 
 
 
@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,    // Required for common directives like NgIf, NgFor
     RouterModule,
-    FormsModule,
+    NavbarComponent,
+    FooterComponent,
     ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
@@ -21,14 +22,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   title = 'Mohammed Abdul Aziz - Portfolio';
-
-  formData = {
-    name: '',
-    email: '',
-    message: '',
-  };
-
-  mobileMenuOpen = false;
 
   clientLogos = [
     { src: './assets/images/clients-logo/EquityTaxation-LLP-Client_logo.png', alt: 'Equity Taxation LLP' },
@@ -50,30 +43,35 @@ export class HomeComponent implements OnInit, AfterViewInit {
     { src: './assets/images/clients-logo/East-Coast-Driving-Academy.png', alt: 'East Coast Driving Academy' },
   ];
 
-  skillsList = [
-    'Html 5', 'Css3', 'Bootstrap 4 & 5', 'JavaScript', 'Figma', 'Adobe Xd', 'Balsamiq',
-    'Angular CLI', 'Angular Material', 'Graphics Designing', 'Photoshop', 'Illustrator',
-    'PrimeNg', 'Typescript', 'MYSQL', 'Jquery', 'Corel Draw', 'WordPress', 'Joomla',
-    'Dreamweaver', 'Online Marketing', 'SEO-Basic', 'CMS', 'E-Commerce', 'Word Excel',
-    'Microsoft Word', 'Outlook', 'PowerPoint', 'OneNote', 'Command Line Interpreter',
-    'Bash', 'Visual Code', 'Postman', 'Email Js', 'Swiper Js', 'Astro Js', 'React Js',
-    'Next Js', 'Git', 'GitHub', 'GitLab', 'Cursor AI', 'Claude Code', 'Antigravity',
-    'OpenAI Codex', 'Warp Terminal',
+  skillGroups: { name: string; icon: string; skills: string[] }[] = [
+    {
+      name: 'Languages & Core',
+      icon: 'bi-code-slash',
+      skills: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'jQuery'],
+    },
+    {
+      name: 'Frameworks & Libraries',
+      icon: 'bi-diagram-3',
+      skills: ['Angular CLI', 'Angular Material', 'React JS', 'Next JS', 'Astro JS', 'Bootstrap 4 & 5', 'PrimeNG'],
+    },
+    {
+      name: 'Design Tools',
+      icon: 'bi-palette',
+      skills: ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator', 'Balsamiq', 'CorelDRAW'],
+    },
+    {
+      name: 'CMS & Platforms',
+      icon: 'bi-window-stack',
+      skills: ['WordPress', 'Joomla', 'Dreamweaver', 'MySQL', 'CMS/E-Commerce'],
+    },
+    {
+      name: 'Workflow & Tools',
+      icon: 'bi-tools',
+      skills: ['Git', 'GitHub', 'GitLab', 'Jira', 'Postman', 'Bash / CLI', 'Cursor AI', 'Claude Code'],
+    },
   ];
 
-  get skillColumns(): string[][] {
-    const columns: string[][] = [[], [], [], []];
-    this.skillsList.forEach((skill, i) => columns[i % 4].push(skill));
-    return columns;
-  }
-
-  toggleMobileMenu() {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
-  }
-
-  closeMobileMenu() {
-    this.mobileMenuOpen = false;
-  }
+  activeSkillTab = 0;
 
   constructor(
     private apiServ: ApiServicesService,
@@ -120,41 +118,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       );
       counters.forEach((counter) => counterObserver.observe(counter));
     }
-
-    this.initScrollSpy();
-  }
-
-  private initScrollSpy() {
-    const navLinks = document.querySelectorAll<HTMLAnchorElement>('.section-link');
-    if (!navLinks.length) {
-      return;
-    }
-    const sections = Array.from(navLinks)
-      .map((link) => {
-        const id = (link.getAttribute('href') || '').replace('#', '');
-        return document.getElementById(id);
-      })
-      .filter((el): el is HTMLElement => !!el);
-
-    if (!sections.length) {
-      return;
-    }
-
-    const setActive = () => {
-      const scrollPos = window.scrollY + 160;
-      let currentId = sections[0].id;
-      for (const sec of sections) {
-        if (sec.offsetTop <= scrollPos) {
-          currentId = sec.id;
-        }
-      }
-      navLinks.forEach((link) => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
-      });
-    };
-
-    window.addEventListener('scroll', setActive, { passive: true });
-    setActive();
   }
 
   private animateCounter(el: HTMLElement) {
@@ -176,25 +139,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
     };
     requestAnimationFrame(step);
   }
-
-
-  sendEmail(form: any) {
-    const serviceID = 'service_clfo30o';
-    const templateID = 'template_wyg4bop';
-    const publicKey = 'GC651imGW-EZCLx62';
-    emailjs
-      .send(serviceID, templateID, this.formData, publicKey)
-      .then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Message sent successfully!');
-          this.formData = { name: '', email: '', message: '' }; // Reset form
-        },
-        (error) => {
-          console.log('FAILED...', error);
-          alert('Failed to send the message. Please try again.');
-        }
-      );
-    }
-
-  }
+}

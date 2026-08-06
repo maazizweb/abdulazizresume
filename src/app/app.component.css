@@ -1,0 +1,30 @@
+.route-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  z-index: 2000;
+  background: rgba(245, 88, 55, 0.15);
+  overflow: hidden;
+}
+
+.route-progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: var(--color-brand);
+  animation: route-progress-sweep 0.9s ease-in-out infinite;
+}
+
+@keyframes route-progress-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(350%);
+  }
+}

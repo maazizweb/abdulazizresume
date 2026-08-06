@@ -16,6 +16,12 @@ interface WorkedWithLogo {
   schemas: [NO_ERRORS_SCHEMA],
 })
 export class ProudlyWorkedWithComponent implements AfterViewInit {
+  loadedImages = new Set<number>();
+
+  onImageLoad(index: number) {
+    this.loadedImages.add(index);
+  }
+
   constructor(
     private elementRef: ElementRef<HTMLElement>,
     @Inject(PLATFORM_ID) private platformId: Object
