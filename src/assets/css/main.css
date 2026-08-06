@@ -309,14 +309,14 @@ Common Buttons
 ==================*/
 .btn-rounded-lg {
   text-align: center;
-  color: #fff;
+  color: #363434;
   font-family: var(--ff-red-hat);
   font-size: 15px;
   font-style: normal;
   font-weight: 600;
   line-height: 16px;
   border-radius: 40px;
-  background: var(--color-brand);
+  /* background: var(--color-brand); */
   padding: 20px 40px;
   display: inline-block;
 }

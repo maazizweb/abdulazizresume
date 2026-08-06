@@ -202,16 +202,17 @@
 }
 
 /* ===== Hero: CTA row (LinkedIn / Download CV / GitHub) ===== */
-.hero-buttons .btn-rounded-lg.hero-btn-primary {
+.hero-buttons .btn-rounded-lg.hero-btn-primary,
+.about__btn .btn-rounded-lg.hero-btn-primary {
   background: var(--color-brand);
   color: #fff;
   padding: 18px 40px;
   font-size: 16px;
-  box-shadow: 0 10px 24px rgba(245, 88, 55, 0.35);
+  box-shadow: 0 5px 0px rgba(245, 88, 55, 0.35);
 }
 
 .hero-buttons .btn-rounded-lg.hero-btn-secondary {
-  border: 1.5px solid rgba(13, 12, 11, 0.25);
+  border: 1.5px solid rgb(13 12 11 / 4%);
   padding: 16px 34px;
 }
 

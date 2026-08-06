@@ -14,7 +14,7 @@
                         <div class="d-flex align-items-center gap-4">
                             <div class="mobile-menu d-flex ">
                                 <a href="javascript:void(0)" class="hamburger d-block d-xl-none"
-                                    [class.h-active]="mobileMenuOpen" (click)="toggleMobileMenu()">
+                                    [class.d-none]="mobileMenuOpen" (click)="toggleMobileMenu()">
                                     <span class="h-top"></span>
                                     <span class="h-middle"></span>
                                     <span class="h-bottom"></span>
@@ -25,39 +25,56 @@
                 </div>
 
                 <div class="col-xl-9">
+                    <div class="mobile-menu-overlay d-xl-none" [class.active]="mobileMenuOpen"
+                        (click)="closeMobileMenu()"></div>
                     <nav class="main-nav float-end" [class.slidenav]="mobileMenuOpen">
-                        <div class="inner-logo d-xl-none text-center">
-                            <a routerLink="/">
-                                <h6>Abdul Aziz</h6>
+                        <div class="inner-logo d-xl-none d-flex justify-content-between align-items-center">
+                                <a routerLink="/">
+                            <img class="w-75" style="width:12rem" src="../assets/images/logo/SVG/Logo_aziz-v2_2.svg" alt="abdulaziz-logo">
+                        </a>
+                            <a href="javascript:void(0)" class="mobile-menu-close d-block d-xl-none"
+                                (click)="closeMobileMenu()" aria-label="Close menu">
+                                <i class="bi bi-x-lg"></i>
                             </a>
                         </div>
                         <ul class="navigation">
                             <li>
                                 <a href="/#about" data-section="about" class="section-link"
-                                    (click)="goToSection('about', $event)">About me</a>
+                                    (click)="goToSection('about', $event)"> About me</a>
                             </li>
                             <li>
                                 <a href="/#experience" data-section="experience" class="section-link"
-                                    (click)="goToSection('experience', $event)">Experience</a>
+                                    (click)="goToSection('experience', $event)"> Experience</a>
                             </li>
                             <li>
                                 <a href="/#education" data-section="education" class="section-link"
-                                    (click)="goToSection('education', $event)">Education</a>
+                                    (click)="goToSection('education', $event)"> Education</a>
                             </li>
                             <li>
                                 <a href="/#myportfolio" data-section="myportfolio" class="section-link"
-                                    (click)="goToSection('myportfolio', $event)">Portfolio</a>
+                                    (click)="goToSection('myportfolio', $event)"> Portfolio</a>
                             </li>
                             <li>
                                 <a href="/#skills" data-section="skills" class="section-link"
-                                    (click)="goToSection('skills', $event)">Skills</a>
+                                    (click)="goToSection('skills', $event)"> Skills</a>
                             </li>
 
                             <li>
                                 <a href="/#contact" data-section="contact" class="section-link"
-                                    (click)="goToSection('contact', $event)">Contact</a>
+                                    (click)="goToSection('contact', $event)"> Contact</a>
                             </li>
                         </ul>
+                        <div class="mobile-menu-actions d-xl-none">
+                            <a href="https://www.linkedin.com/in/mdaaziz" target="_blank" rel="noopener"
+                                title="LinkedIn" class="btn-rounded-lg hero-btn-secondary">
+                                <span><i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn</span>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1hXmCMAWSNXMYGLXJmEqTqMtP9zsIL_8S/view"
+                                download="proposed_file_name" title="Download CV" target="_blank" rel="noopener"
+                                class="btn-rounded-lg hero-btn-primary">
+                                <span>Download CV</span>
+                            </a>
+                        </div>
                     </nav>
                 </div>
             </div>
