@@ -331,6 +331,11 @@ Common Buttons
   color: #ffffff;
 }
 
+.hero-btn-secondary:hover {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
 .btn-rounded-lg:hover span {
   -webkit-animation: UpInitial 0.25s, UpEnd 0.25s 0.25s;
           animation: UpInitial 0.25s, UpEnd 0.25s 0.25s;
