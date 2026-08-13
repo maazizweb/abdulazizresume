@@ -36,8 +36,8 @@
 .ndp-standout h3 { font-family: var(--ff-Marcellus); font-size: 58px; font-weight: 400; color: var(--panel-text); margin: 0; }
 .ndp-standout__titlerow { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
 .ndp-countdown { display: flex; flex-direction: column; align-items: center; gap: 0; padding: 12px 26px; border-radius: 18px; border: 0; background: color-mix(in srgb, var(--panel-text) 12%, transparent); flex-shrink: 0; }
-.ndp-countdown strong { font-family: var(--ff-Marcellus); font-size: 40px; line-height: 1.1; font-weight: 400; color: var(--panel-text); }
-.ndp-countdown span { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: color-mix(in srgb, var(--panel-text) 70%, transparent); }
+.ndp-countdown strong { font-family: var(--ff-Marcellus); font-size: 52px; line-height: 1.1; font-weight: 400; color: var(--panel-text); }
+.ndp-countdown span { font-size: 16px; text-transform: uppercase; letter-spacing: .04em; color: color-mix(in srgb, var(--panel-text) 70%, transparent); }
 .ndp-standout__tagline { color: color-mix(in srgb, var(--panel-text) 85%, transparent); font-size: 20px; line-height: 150%; margin-bottom: 18px; }
 .ndp-standout__focus { padding-bottom: 20px; }
 .ndp-standout__focus li { color: color-mix(in srgb, var(--panel-text) 92%, transparent); font-size: 23px; padding-left: 22px; }
