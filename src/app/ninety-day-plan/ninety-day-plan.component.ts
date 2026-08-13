@@ -17,12 +17,14 @@ interface Achievement {
   color: string;
   background: string;
   textColor: string;
+  courseCompletion?: string;
 }
 
 interface GapItem {
   area: string;
   status: Status;
   note: string;
+  courseCompletion?: string;
 }
 
 interface Phase {
@@ -65,7 +67,8 @@ const UNLOCK_PREVIEW_DAYS = 7;
 export class NinetyDayPlanComponent implements AfterViewInit {
   activeStep = 'gaps';
   checked = new Set<string>();
-  achievements: Achievement[] = achievementsData;
+  /** The 90-day, time-boxed courses (everything not already marked "Completed" statically). */
+  trackedAchievements: Achievement[] = (achievementsData as Achievement[]).filter((a) => a.courseCompletion !== 'Completed');
   achievementIndex = 0;
   achievementDaysLeft = ACHIEVEMENT_DAYS;
   unlockPreviewDays = UNLOCK_PREVIEW_DAYS;
@@ -323,19 +326,24 @@ export class NinetyDayPlanComponent implements AfterViewInit {
     return this.weeks.reduce((sum, w) => sum + w.checklist.length, 0);
   }
 
+  /** Top 3 not-yet-completed courses. A course's 30-day slot elapsing auto-drops it from this list — no manual flag needed. */
+  get achievements(): Achievement[] {
+    return this.trackedAchievements.slice(this.achievementIndex, this.achievementIndex + 3);
+  }
+
   get activeSlide(): Achievement {
     return this.achievements[this.slideIndex];
   }
 
-  /** Any achievement past the current one is still browsable in the slider, but shows a locked teaser instead of real content. */
+  /** Slide 0 is always the current course; anything after it is a locked, upcoming preview. */
   get isLockedPreview(): boolean {
-    return this.slideIndex > this.achievementIndex;
+    return this.slideIndex > 0;
   }
 
   /** Real days remaining until this slide's 30-day slot actually starts. */
   get daysUntilStart(): number {
-    if (this.slideIndex <= this.achievementIndex) return 0;
-    return this.achievementDaysLeft + (this.slideIndex - this.achievementIndex - 1) * ACHIEVEMENT_DAYS;
+    if (this.slideIndex <= 0) return 0;
+    return this.achievementDaysLeft + (this.slideIndex - 1) * ACHIEVEMENT_DAYS;
   }
 
   get isUnlockingSoon(): boolean {
@@ -343,13 +351,11 @@ export class NinetyDayPlanComponent implements AfterViewInit {
   }
 
   get slideBadge(): string {
-    return this.slideIndex === this.achievementIndex ? "🚀 This Month — What You'll Learn" : '✅ Completed';
+    return "🚀 This Month — What You'll Learn";
   }
 
   get slideCountdown(): { value: string; label: string } {
-    return this.slideIndex === this.achievementIndex
-      ? { value: String(this.achievementDaysLeft), label: 'days left' }
-      : { value: '✓', label: 'completed' };
+    return { value: String(this.achievementDaysLeft), label: 'days left' };
   }
 
   nextSlide(): void {
@@ -438,9 +444,9 @@ export class NinetyDayPlanComponent implements AfterViewInit {
       localStorage.setItem(START_DATE_KEY, startDate);
     }
     const elapsedDays = Math.floor((Date.now() - new Date(startDate).getTime()) / 86400000);
-    const lastIndex = this.achievements.length - 1;
+    const lastIndex = Math.max(0, this.trackedAchievements.length - 1);
     this.achievementIndex = Math.min(lastIndex, Math.floor(elapsedDays / ACHIEVEMENT_DAYS));
-    this.slideIndex = this.achievementIndex;
+    this.slideIndex = 0;
     const daysIntoCurrent = elapsedDays - this.achievementIndex * ACHIEVEMENT_DAYS;
     this.achievementDaysLeft = Math.max(0, ACHIEVEMENT_DAYS - daysIntoCurrent);
   }
@@ -452,8 +458,12 @@ export class NinetyDayPlanComponent implements AfterViewInit {
     const revealItems = this.elementRef.nativeElement.querySelectorAll<HTMLElement>('.reveal-up');
     if (!revealItems.length) return;
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => entry.target.classList.toggle('in-view', entry.isIntersecting));
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        });
       },
       { threshold: 0.12, rootMargin: '0px 0px -10% 0px' }
     );

@@ -1,8 +1,9 @@
 [
   { "area": "HTML5 / CSS3", "status": "have", "note": "10+ years, dozens of shipped responsive sites — maintain, don’t relearn." },
-  { "area": "JavaScript", "status": "have", "note": "Long-standing daily use — sharpen modern ES2020+ patterns, not fundamentals." },
+  { "area": "JavaScript", "status": "have", "note": "Long-standing daily use — sharpen modern ES2020+ patterns, not fundamentals.", "courseCompletion": "Completed" },
   { "area": "TypeScript", "status": "strengthen", "note": "Used across Angular projects; needs the same fluency inside React/Next." },
-  { "area": "Angular (CLI + Material)", "status": "have", "note": "Real CRM redesign, multiple production builds — a genuine strength, keep it visible." },
+  { "area": "Angular (CLI + Material)", "status": "have", "note": "Real CRM redesign, multiple production builds — a genuine strength, keep it visible.", "courseCompletion": "Completed" },
+  { "area": "Astro Js", "status": "have", "note": "Content-focused static sites already shipped to production.", "courseCompletion": "Completed" },
   { "area": "React", "status": "strengthen", "note": "Listed as a skill and used once (Northsimcoephysio) — thin evidence, no modern-pattern depth yet." },
   { "area": "Next.js", "status": "strengthen", "note": "Claimed on the site, zero project evidence in the resume — needs at least one real build." },
   { "area": "Component architecture", "status": "have", "note": "Strong in Angular (reusable UI libraries); needs the React equivalent." },

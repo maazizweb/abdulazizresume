@@ -15,7 +15,8 @@
     "watermarkMode": "mask",
     "color": "#3D7E90",
     "background": "#3D7E90",
-    "textColor": "#ffffff"
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed"
   },
   {
     "id": "nextjs",
@@ -33,7 +34,8 @@
     "watermarkMode": "mask",
     "color": "#ffffff",
     "background": "#000000",
-    "textColor": "#ffffff"
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed"
   },
   {
     "id": "typescript",
@@ -51,6 +53,83 @@
     "watermarkMode": "mask",
     "color": "#3178C6",
     "background": "#3178C6",
-    "textColor": "#ffffff"
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed"
+  },
+  {
+    "id": "javascript",
+    "title": "JavaScript",
+    "tagline": "The language behind every framework on this list — already a proven daily driver.",
+    "focus": [
+      "ES2020+ syntax & modern patterns",
+      "Async/await & promise handling",
+      "DOM & event-driven programming",
+      "Array/object methods & functional patterns",
+      "Debugging & browser dev tools"
+    ],
+    "deliverable": "10+ years of daily use across 15+ shipped production projects.",
+    "logo": "assets/icons/tech/javascript.svg",
+    "watermarkMode": "mask",
+    "color": "#F7DF1E",
+    "background": "#F7DF1E",
+    "textColor": "#0D0C0B",
+    "courseCompletion": "Completed"
+  },
+  {
+    "id": "angular-cli",
+    "title": "Angular CLI",
+    "tagline": "Scaffolding, builds and project structure — the backbone of every Angular app shipped so far.",
+    "focus": [
+      "Project scaffolding & schematics",
+      "Build configuration & environments",
+      "Routing & lazy-loaded modules",
+      "Standalone components",
+      "Production build optimization"
+    ],
+    "deliverable": "Multiple production Angular builds, including a full CRM redesign.",
+    "logo": "assets/icons/tech/angular.svg",
+    "watermarkMode": "mask",
+    "color": "#DD0031",
+    "background": "#DD0031",
+    "textColor": "#ffffff",
+    "courseCompletion": "Completed"
+  },
+  {
+    "id": "angular-material",
+    "title": "Angular Material",
+    "tagline": "Consistent, accessible UI components used across real client-facing projects.",
+    "focus": [
+      "Material component library",
+      "Theming & design tokens",
+      "Reusable UI component libraries",
+      "Accessibility out of the box",
+      "Responsive layout with Material"
+    ],
+    "deliverable": "Reusable Angular Material component libraries shipped to production.",
+    "logo": "assets/icons/tech/angular.svg",
+    "watermarkMode": "mask",
+    "color": "#3F51B5",
+    "background": "#3F51B5",
+    "textColor": "#ffffff",
+    "courseCompletion": "Completed"
+  },
+  {
+    "id": "astro",
+    "title": "Astro Js",
+    "tagline": "Content-focused sites shipped fast, with minimal JS by default.",
+    "focus": [
+      "Islands architecture & partial hydration",
+      "Content collections & MDX",
+      "File-based routing",
+      "Framework-agnostic components",
+      "Static & server rendering"
+    ],
+    "deliverable": "Fast, content-driven Astro sites already shipped to production.",
+    "logo": "assets/icons/tech/astro.svg",
+    "watermarkMode": "mask",
+    "color": "#FF5D01",
+    "background": "#13151A",
+    "textColor": "#ffffff",
+    "courseCompletion": "Completed"
   }
 ]

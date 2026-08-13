@@ -23,7 +23,7 @@
   </div>
 
   <!-- Standout: card slider, one full hero card per course, auto-starts on the current 30-day milestone -->
-  <div class="ndp-standout reveal-up" [style.--achievement-color]="activeSlide.color"
+  <div *ngIf="activeSlide" class="ndp-standout reveal-up" [style.--achievement-color]="activeSlide.color"
     [style.--panel-bg]="activeSlide.background" [style.--panel-text]="activeSlide.textColor">
     <ng-container [ngSwitch]="activeSlide.watermarkMode">
       <img *ngSwitchCase="'image'" class="ndp-standout__logo-bg ndp-standout__logo-bg--image" [src]="activeSlide.logo" alt="" aria-hidden="true">
