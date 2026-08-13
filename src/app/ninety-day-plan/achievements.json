@@ -1,0 +1,38 @@
+[
+  {
+    "id": "react",
+    "title": "Modern React Js",
+    "tagline": "The library for web interfaces — fill the specific holes the gap analysis found.",
+    "focus": [
+      "Modern JavaScript & TypeScript depth",
+      "React fundamentals, hooks, state",
+      "Component architecture in React",
+      "API integration, loading/error states",
+      "Accessibility & Git workflow in practice"
+    ],
+    "deliverable": "A small, feature-complete React app proving the fundamentals landed.",
+    "logo": "assets/icons/tech/react.svg",
+    "watermarkMode": "mask",
+    "color": "#3D7E90",
+    "background": "#3D7E90",
+    "textColor": "#ffffff"
+  },
+  {
+    "id": "nextjs",
+    "title": "Next.js",
+    "tagline": "Ship a production-grade app with routing, rendering and API routes.",
+    "focus": [
+      "App Router & file-based routing",
+      "Server vs client components",
+      "API routes & data fetching",
+      "Image/font optimization",
+      "Deployment on Vercel"
+    ],
+    "deliverable": "A deployed Next.js app demonstrating SSR/SSG and API routes.",
+    "logo": "assets/icons/tech/nextdotjs.svg",
+    "watermarkMode": "mask",
+    "color": "#ffffff",
+    "background": "#000000",
+    "textColor": "#ffffff"
+  }
+]

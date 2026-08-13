@@ -1,0 +1,208 @@
+<!-- ============= 90-Day Plan: Hero ============= -->
+<section class="ndp-hero space-y-top space-y-bottom">
+  <div class="container">
+    <div class="section-heading text-center reveal-up">
+      <span>Frontend Developer · 90-Day Plan</span>
+      <h2>Job-Ready in <span class="text_gradient">90 Days</span></h2>
+      <p class="mx-auto">
+        One path, seven steps. Built from what your resume already proves — 3 hours a day, 90 days,
+        one goal: a Frontend Developer offer.
+      </p>
+    </div>
+
+    <div class="ndp-mission reveal-up">
+      <div class="ndp-mission__stat"><strong>3 hrs</strong><span>per day</span></div>
+      <div class="ndp-mission__stat"><strong>90</strong><span>days</span></div>
+      <div class="ndp-mission__stat"><strong>7</strong><span>steps</span></div>
+      <div class="ndp-mission__progress">
+        <div class="ndp-mission__progress-bar"><div class="ndp-mission__progress-fill" [style.width.%]="progressPercent"></div></div>
+        <span>{{ progressPercent }}% checked off</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Standout: card slider, one full hero card per course, auto-starts on the current 30-day milestone -->
+  <div class="ndp-standout reveal-up" [style.--achievement-color]="activeSlide.color"
+    [style.--panel-bg]="activeSlide.background" [style.--panel-text]="activeSlide.textColor">
+    <ng-container [ngSwitch]="activeSlide.watermarkMode">
+      <img *ngSwitchCase="'image'" class="ndp-standout__logo-bg ndp-standout__logo-bg--image" [src]="activeSlide.logo" alt="" aria-hidden="true">
+      <div *ngSwitchDefault class="ndp-standout__logo-bg" aria-hidden="true"
+        [style.background-color]="activeSlide.textColor"
+        [style.-webkit-mask-image]="'url(' + activeSlide.logo + ')'"
+        [style.mask-image]="'url(' + activeSlide.logo + ')'"></div>
+    </ng-container>
+
+    <button type="button" class="ndp-standout__arrow ndp-standout__arrow--prev" (click)="prevSlide()" aria-label="Previous course"><i class="bi bi-chevron-left"></i></button>
+    <button type="button" class="ndp-standout__arrow ndp-standout__arrow--next" (click)="nextSlide()" aria-label="Next course"><i class="bi bi-chevron-right"></i></button>
+
+    <div class="ndp-standout__inner" [class.ndp-standout__inner--locked]="isLockedPreview">
+      <span class="ndp-standout__badge">{{ isLockedPreview ? (isUnlockingSoon ? '🔓 Unlocking Soon' : '🔒 Locked') : slideBadge }}</span>
+      <div class="ndp-standout__titlerow">
+        <h3>{{ activeSlide.title }}</h3>
+        <div class="ndp-countdown" *ngIf="!isLockedPreview; else lockedCountdownTpl">
+          <strong>{{ slideCountdown.value }}</strong><span>{{ slideCountdown.label }}</span>
+        </div>
+        <ng-template #lockedCountdownTpl>
+          <div class="ndp-countdown"><strong>{{ daysUntilStart }}</strong><span>days to start</span></div>
+        </ng-template>
+      </div>
+      <p class="ndp-standout__tagline">
+        {{ activeSlide.tagline }}
+        <ng-container *ngIf="isLockedPreview"> Finish {{ achievements[slideIndex - 1].title }} first — this course starts right after.</ng-container>
+      </p>
+
+      <ul class="clean-list ndp-standout__focus"><li *ngFor="let f of activeSlide.focus">{{ f }}</li></ul>
+
+      <div class="ndp-standout__divider"></div>
+
+      <span class="ndp-standout__overview-label">Course Structure</span>
+      <div class="ndp-standout__topics">
+        <span class="ndp-standout__topic-badge" *ngFor="let f of activeSlide.focus">{{ f }}</span>
+      </div>
+    </div>
+
+    <div class="ndp-standout__dots">
+      <button type="button" *ngFor="let a of achievements; let i = index" [class.active]="i === slideIndex"
+        (click)="slideIndex = i" [attr.aria-label]="a.title"></button>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============= Linear Roadmap ============= -->
+<section class="ndp-section space-y-bottom" id="roadmap-start">
+  <div class="container">
+    <ol class="ndp-path">
+
+      <!-- Step 0: Where you are -->
+      <li class="ndp-step reveal-up" [class.active]="activeStep === 'gaps'">
+        <div class="ndp-step__rail"><span class="ndp-step__node">00</span><span class="ndp-step__connector"></span></div>
+        <div class="ndp-step__card">
+          <button type="button" class="ndp-step__header" (click)="toggleStep('gaps')" [attr.aria-expanded]="activeStep === 'gaps'">
+            <div class="ndp-step__heading">
+              <span class="ndp-step__eyebrow">Start here</span>
+              <h3>Where You Are Now</h3>
+              <p>Don’t relearn what you already have — close what’s actually missing.</p>
+            </div>
+            <span class="ndp-step__toggle"><i class="bi" [ngClass]="activeStep === 'gaps' ? 'bi-dash-lg' : 'bi-plus-lg'"></i></span>
+          </button>
+          <div class="ndp-step__panel" [class.open]="activeStep === 'gaps'">
+            <div class="ndp-step__panel-inner">
+              <div class="ndp-gap-row"><span class="ndp-gap-label is-have">🟢 Have</span>
+                <span class="ndp-chip" *ngFor="let g of haveItems" [attr.title]="g.note">{{ g.area }}</span></div>
+              <div class="ndp-gap-row"><span class="ndp-gap-label is-strengthen">🟠 Strengthen</span>
+                <span class="ndp-chip" *ngFor="let g of strengthenItems" [attr.title]="g.note">{{ g.area }}</span></div>
+              <div class="ndp-gap-row"><span class="ndp-gap-label is-need">🔴 Need</span>
+                <span class="ndp-chip" *ngFor="let g of needItems" [attr.title]="g.note">{{ g.area }}</span></div>
+              <div class="ndp-gap-row"><span class="ndp-gap-label is-later">⚪ Later</span>
+                <span class="ndp-chip" *ngFor="let g of laterItems" [attr.title]="g.note">{{ g.area }}</span></div>
+              <p class="ndp-step__note">Tap a tag to see why. Skip for now: {{ doNotLearnNow[0].item }}, {{ doNotLearnNow[1].item }}, another framework or design tool — none of it moves the needle in 90 days.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Steps 1-4: Phases (Phase 1 is previewed in the hero above; full details here) -->
+      <li class="ndp-step reveal-up" *ngFor="let p of phases" [class.active]="activeStep === 'phase' + p.number">
+        <div class="ndp-step__rail"><span class="ndp-step__node">0{{ p.number }}</span><span class="ndp-step__connector"></span></div>
+        <div class="ndp-step__card">
+          <button type="button" class="ndp-step__header" (click)="toggleStep('phase' + p.number)" [attr.aria-expanded]="activeStep === 'phase' + p.number">
+            <div class="ndp-step__heading">
+              <span class="ndp-step__eyebrow">{{ p.days }}</span>
+              <h3>{{ p.title }}</h3>
+              <p>{{ p.tagline }}</p>
+            </div>
+            <span class="ndp-step__toggle"><i class="bi" [ngClass]="activeStep === 'phase' + p.number ? 'bi-dash-lg' : 'bi-plus-lg'"></i></span>
+          </button>
+          <div class="ndp-step__panel" [class.open]="activeStep === 'phase' + p.number">
+            <div class="ndp-step__panel-inner">
+              <ul class="clean-list ndp-step__focus"><li *ngFor="let f of p.focus">{{ f }}</li></ul>
+
+              <div class="ndp-weekflow">
+                <ng-container *ngFor="let w of weeksForPhase(p.number); let last = last">
+                  <div class="ndp-weekflow__box">
+                    <span class="ndp-weekflow__tag">{{ w.days }}</span>
+                    <strong>{{ w.title }}</strong>
+                  </div>
+                  <div class="ndp-weekflow__body">
+                    <p>{{ w.goal }}</p>
+                    <div class="ndp-week-row__checklist">
+                      <label class="ndp-check" *ngFor="let item of w.checklist; let i = index">
+                        <input type="checkbox" [checked]="isChecked(w.id, i)" (change)="toggleItem(w.id, i)">
+                        <span>{{ item }}</span>
+                      </label>
+                    </div>
+                  </div>
+                  <span class="ndp-flow__arrow ndp-flow__arrow--sm" *ngIf="!last" aria-hidden="true"></span>
+                </ng-container>
+              </div>
+
+              <div class="ndp-step__deliverable"><i class="bi bi-flag-fill" aria-hidden="true"></i> {{ p.deliverable }}</div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Step 5: Job-ready bar -->
+      <li class="ndp-step reveal-up" [class.active]="activeStep === 'ready'">
+        <div class="ndp-step__rail"><span class="ndp-step__node">05</span><span class="ndp-step__connector"></span></div>
+        <div class="ndp-step__card">
+          <button type="button" class="ndp-step__header" (click)="toggleStep('ready')" [attr.aria-expanded]="activeStep === 'ready'">
+            <div class="ndp-step__heading">
+              <span class="ndp-step__eyebrow">Day 90 bar</span>
+              <h3>What Does Job Ready Mean?</h3>
+              <p>The objective checklist this whole plan is building toward.</p>
+            </div>
+            <span class="ndp-step__toggle"><i class="bi" [ngClass]="activeStep === 'ready' ? 'bi-dash-lg' : 'bi-plus-lg'"></i></span>
+          </button>
+          <div class="ndp-step__panel" [class.open]="activeStep === 'ready'">
+            <div class="ndp-step__panel-inner">
+              <div class="ndp-jobready">
+                <label class="ndp-check ndp-check--plain" *ngFor="let c of jobReadyChecklist">
+                  <input type="checkbox" disabled><span>{{ c }}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Step 6: What's next -->
+      <li class="ndp-step reveal-up" [class.active]="activeStep === 'next'">
+        <div class="ndp-step__rail"><span class="ndp-step__node">06</span></div>
+        <div class="ndp-step__card">
+          <button type="button" class="ndp-step__header" (click)="toggleStep('next')" [attr.aria-expanded]="activeStep === 'next'">
+            <div class="ndp-step__heading">
+              <span class="ndp-step__eyebrow">Beyond Day 90</span>
+              <h3>What's Next</h3>
+              <p>This plan optimizes for one goal. What comes after builds on it.</p>
+            </div>
+            <span class="ndp-step__toggle"><i class="bi" [ngClass]="activeStep === 'next' ? 'bi-dash-lg' : 'bi-plus-lg'"></i></span>
+          </button>
+          <div class="ndp-step__panel" [class.open]="activeStep === 'next'">
+            <div class="ndp-step__panel-inner">
+              <div class="tag-row"><span class="ndp-chip" *ngFor="let t of futureTracks">{{ t }}</span></div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============= Final CTA ============= -->
+<section class="ndp-cta space-y-bottom">
+  <div class="container">
+    <div class="ndp-cta__card reveal-up">
+      <span class="ndp-cta__eyebrow">My 90-Day Mission</span>
+      <h3>3 Hours a Day. 90 Days. One Goal: A Frontend Developer Offer.</h3>
+      <p>Skill Gaps → Projects → Portfolio → Interview → Applications.</p>
+      <div class="ndp-cta__progress">
+        <div class="ndp-mission__progress-bar"><div class="ndp-mission__progress-fill" [style.width.%]="progressPercent"></div></div>
+        <span>{{ checked.size }} / {{ totalChecklistItems }} tasks checked off</span>
+      </div>
+      <a href="#roadmap-start" class="btn-rounded-lg hero-btn-primary"><span>Start Day 1</span></a>
+    </div>
+  </div>
+</section>
