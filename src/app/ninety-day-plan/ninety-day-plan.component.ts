@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, Inject, NO_ERRORS_SCHEMA, PLATFOR
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import achievementsData from './achievements.json';
+import skillsStatusData from './skills-status.json';
 
 type Status = 'have' | 'strengthen' | 'need' | 'later';
 
@@ -95,27 +96,7 @@ export class NinetyDayPlanComponent implements AfterViewInit {
     'Structured interview preparation',
   ];
 
-  gapTable: GapItem[] = [
-    { area: 'HTML5 / CSS3', status: 'have', note: '10+ years, dozens of shipped responsive sites — maintain, don’t relearn.' },
-    { area: 'JavaScript', status: 'have', note: 'Long-standing daily use — sharpen modern ES2020+ patterns, not fundamentals.' },
-    { area: 'TypeScript', status: 'strengthen', note: 'Used across Angular projects; needs the same fluency inside React/Next.' },
-    { area: 'Angular (CLI + Material)', status: 'have', note: 'Real CRM redesign, multiple production builds — a genuine strength, keep it visible.' },
-    { area: 'React', status: 'strengthen', note: 'Listed as a skill and used once (Northsimcoephysio) — thin evidence, no modern-pattern depth yet.' },
-    { area: 'Next.js', status: 'strengthen', note: 'Claimed on the site, zero project evidence in the resume — needs at least one real build.' },
-    { area: 'Component architecture', status: 'have', note: 'Strong in Angular (reusable UI libraries); needs the React equivalent.' },
-    { area: 'Responsive / mobile-first UI', status: 'have', note: 'Demonstrated repeatedly across client projects — maintain.' },
-    { area: 'Accessibility (WCAG)', status: 'strengthen', note: 'Applied conceptually — needs concrete, explainable examples in a React project.' },
-    { area: 'API integration', status: 'have', note: 'Explicit experience wiring frontend to backend/REST across multiple roles.' },
-    { area: 'Git / GitHub workflow', status: 'have', note: 'Git, Bitbucket, branching and PR experience already on record.' },
-    { area: 'Automated testing', status: 'need', note: 'No Jest, RTL, or test-writing experience anywhere on the resume — a real gap for 2026 hiring bars.' },
-    { area: 'Modern React state (Context/hooks)', status: 'need', note: 'Not evidenced — this is the core of "can you actually build in React."' },
-    { area: 'CI/CD', status: 'need', note: 'No pipeline experience listed — even a basic GitHub Actions deploy closes this.' },
-    { area: 'Deployment', status: 'strengthen', note: 'Comfortable deploying (Vercel, client hosting) — extend to a CI-driven flow.' },
-    { area: 'Frontend performance', status: 'have', note: 'Genuinely strong: Lighthouse audits, code-splitting, asset optimization already on the resume.' },
-    { area: 'Interview preparation', status: 'need', note: 'No structured prep visible — treat as its own skill, separate from engineering ability.' },
-    { area: 'Job-search system', status: 'need', note: 'No tracked, repeatable process yet — build one instead of applying ad hoc.' },
-    { area: 'Node.js / backend / cloud (AWS, Docker)', status: 'later', note: 'Not needed for a frontend-focused hire in 90 days — revisit after landing the role.' },
-  ];
+  gapTable: GapItem[] = skillsStatusData as GapItem[];
 
   doNotLearnNow = [
     { item: 'A new backend framework (NestJS/Express depth)', reason: 'Not what a Frontend Developer posting screens for — skip until the role demands it.' },
@@ -398,6 +379,21 @@ export class NinetyDayPlanComponent implements AfterViewInit {
 
   get laterItems(): GapItem[] {
     return this.gapTable.filter((g) => g.status === 'later');
+  }
+
+  /** Skills already proven on the job (the "have" gaps) — no work needed. */
+  get finishedCount(): number {
+    return this.haveItems.length;
+  }
+
+  /** Everything still open: partial skills to strengthen plus skills not started ("later" is out of scope, excluded). */
+  get pendingCount(): number {
+    return this.strengthenItems.length + this.needItems.length;
+  }
+
+  /** Finished + Pending only — matches what's actually in scope for the 90 days. */
+  get totalSkillsCount(): number {
+    return this.finishedCount + this.pendingCount;
   }
 
   weeksForPhase(phaseNumber: number): WeekPlan[] {

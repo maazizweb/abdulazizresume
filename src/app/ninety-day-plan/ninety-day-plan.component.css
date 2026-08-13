@@ -84,6 +84,18 @@
 .ndp-step__deliverable { display: flex; align-items: center; gap: 8px; margin: 4px 0 20px; font-size: 13px; padding: 12px 14px; background: rgba(245,88,55,.06); border-radius: 10px; }
 .ndp-step__deliverable i { color: var(--color-brand); }
 
+/* skills snapshot: 4 stat cards */
+.ndp-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.ndp-stats__card { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 24px 16px; text-align: center; border: 1px solid rgba(13,12,11,.12); border-radius: 16px; background: #fff; }
+.ndp-stats__card strong { font-family: var(--ff-Marcellus); font-size: 34px; font-weight: 400; color: var(--color-black); }
+.ndp-stats__card span { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: rgba(13,12,11,.55); }
+.ndp-stats__card--pending { border-color: rgba(178,52,52,.35); }
+.ndp-stats__card--pending strong { color: #b23434; }
+.ndp-stats__card--finished { border-color: rgba(30,122,68,.35); }
+.ndp-stats__card--finished strong { color: #1e7a44; }
+.ndp-stats__card--total { border-color: rgba(245,88,55,.35); }
+.ndp-stats__card--total strong { color: var(--color-brand); }
+
 /* gap tags */
 .ndp-gap-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-bottom: 14px; }
 .ndp-gap-label { font-size: 12px; font-weight: 700; margin-right: 4px; }
@@ -123,4 +135,5 @@
   .ndp-standout__arrow--prev { left: 8px; }
   .ndp-standout__arrow--next { right: 8px; }
   .ndp-weekflow--h { grid-template-columns: repeat(2, 1fr); }
+  .ndp-stats { grid-template-columns: repeat(2, 1fr); }
 }

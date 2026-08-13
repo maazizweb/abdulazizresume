@@ -34,5 +34,23 @@
     "color": "#ffffff",
     "background": "#000000",
     "textColor": "#ffffff"
+  },
+  {
+    "id": "typescript",
+    "title": "TypeScript Mastery",
+    "tagline": "Type everything you build — no stray `any`, no runtime surprises interviewers can poke at.",
+    "focus": [
+      "Strict mode, generics & utility types",
+      "Typing React props, hooks & context",
+      "Typed API responses & data models",
+      "Discriminated unions for state/error handling",
+      "Refactoring untyped code to strict TS"
+    ],
+    "deliverable": "Both portfolio projects passing strict-mode TypeScript with zero `any`.",
+    "logo": "assets/icons/tech/typescript.svg",
+    "watermarkMode": "mask",
+    "color": "#3178C6",
+    "background": "#3178C6",
+    "textColor": "#ffffff"
   }
 ]
