@@ -2,13 +2,37 @@ import { AfterViewInit, Component, ElementRef, Inject, NO_ERRORS_SCHEMA, PLATFOR
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import achievementsData from './achievements.json';
-import skillsStatusData from './skills-status.json';
 
 type Status = 'have' | 'strengthen' | 'need' | 'later';
 
+/**
+ * Single source of truth for both the achievement slider and the gap-analysis table.
+ * Course entries (isCourse: true) carry the full slider presentation fields;
+ * gap-only entries (isCourse: false) are professional skills with no course card —
+ * they only ever appear in the "Where You Are Now" gap table.
+ */
 interface Achievement {
   id: string;
   title: string;
+  isCourse: boolean;
+  status: Status;
+  note: string;
+  category?: string;
+  tagline?: string;
+  focus?: string[];
+  deliverable?: string;
+  logo?: string;
+  watermarkMode?: string;
+  color?: string;
+  background?: string;
+  textColor?: string;
+  courseCompletion?: string;
+  link?: string;
+}
+
+/** Narrower view of Achievement used by the slider — course entries always carry these fields. */
+interface CourseAchievement extends Achievement {
+  category: string;
   tagline: string;
   focus: string[];
   deliverable: string;
@@ -17,14 +41,13 @@ interface Achievement {
   color: string;
   background: string;
   textColor: string;
-  courseCompletion?: string;
+  courseCompletion: string;
 }
 
 interface GapItem {
   area: string;
   status: Status;
   note: string;
-  courseCompletion?: string;
 }
 
 interface Phase {
@@ -67,8 +90,12 @@ const UNLOCK_PREVIEW_DAYS = 7;
 export class NinetyDayPlanComponent implements AfterViewInit {
   activeStep = 'gaps';
   checked = new Set<string>();
+  /** Single source of truth for everything: courses (slider + stats) and gap-only skills (the "Where You Are Now" table). */
+  allAchievements: Achievement[] = achievementsData as Achievement[];
+  /** Just the course entries — the ones with a real slider card. */
+  courseAchievements: CourseAchievement[] = this.allAchievements.filter((a) => a.isCourse) as CourseAchievement[];
   /** The 90-day, time-boxed courses (everything not already marked "Completed" statically). */
-  trackedAchievements: Achievement[] = (achievementsData as Achievement[]).filter((a) => a.courseCompletion !== 'Completed');
+  trackedAchievements: CourseAchievement[] = this.courseAchievements.filter((a) => a.courseCompletion !== 'Completed');
   achievementIndex = 0;
   achievementDaysLeft = ACHIEVEMENT_DAYS;
   unlockPreviewDays = UNLOCK_PREVIEW_DAYS;
@@ -99,7 +126,7 @@ export class NinetyDayPlanComponent implements AfterViewInit {
     'Structured interview preparation',
   ];
 
-  gapTable: GapItem[] = skillsStatusData as GapItem[];
+  gapTable: GapItem[] = this.allAchievements.map((a) => ({ area: a.title, status: a.status, note: a.note }));
 
   doNotLearnNow = [
     { item: 'A new backend framework (NestJS/Express depth)', reason: 'Not what a Frontend Developer posting screens for — skip until the role demands it.' },
@@ -327,11 +354,11 @@ export class NinetyDayPlanComponent implements AfterViewInit {
   }
 
   /** Top 3 not-yet-completed courses. A course's 30-day slot elapsing auto-drops it from this list — no manual flag needed. */
-  get achievements(): Achievement[] {
+  get achievements(): CourseAchievement[] {
     return this.trackedAchievements.slice(this.achievementIndex, this.achievementIndex + 3);
   }
 
-  get activeSlide(): Achievement {
+  get activeSlide(): CourseAchievement {
     return this.achievements[this.slideIndex];
   }
 
@@ -387,19 +414,33 @@ export class NinetyDayPlanComponent implements AfterViewInit {
     return this.gapTable.filter((g) => g.status === 'later');
   }
 
-  /** Skills already proven on the job (the "have" gaps) — no work needed. */
+  /** Courses already completed (status "have"). */
   get finishedCount(): number {
-    return this.haveItems.length;
+    return this.courseAchievements.filter((a) => a.courseCompletion === 'Completed').length;
   }
 
-  /** Everything still open: partial skills to strengthen plus skills not started ("later" is out of scope, excluded). */
+  /** Courses still to learn. */
   get pendingCount(): number {
-    return this.strengthenItems.length + this.needItems.length;
+    return this.courseAchievements.filter((a) => a.courseCompletion !== 'Completed').length;
   }
 
-  /** Finished + Pending only — matches what's actually in scope for the 90 days. */
+  /** Every tracked course, completed or not. */
   get totalSkillsCount(): number {
-    return this.finishedCount + this.pendingCount;
+    return this.courseAchievements.length;
+  }
+
+  /** Distinct course categories (Frontend Framework, Backend, Database, ...). */
+  get categories(): string[] {
+    return [...new Set(this.courseAchievements.map((a) => a.category))];
+  }
+
+  /** A category counts as completed as soon as it has at least one "have" course — the rest of its courses still count toward Pending. */
+  get completedCategoriesCount(): number {
+    return this.categories.filter((c) => this.courseAchievements.filter((a) => a.category === c).some((a) => a.courseCompletion === 'Completed')).length;
+  }
+
+  get pendingCategoriesCount(): number {
+    return this.categories.length - this.completedCategoriesCount;
   }
 
   weeksForPhase(phaseNumber: number): WeekPlan[] {

@@ -37,15 +37,24 @@
     <button type="button" class="ndp-standout__arrow ndp-standout__arrow--next" (click)="nextSlide()" aria-label="Next course"><i class="bi bi-chevron-right"></i></button>
 
     <div class="ndp-standout__inner" [class.ndp-standout__inner--locked]="isLockedPreview">
-      <span class="ndp-standout__badge">{{ isLockedPreview ? (isUnlockingSoon ? '🔓 Unlocking Soon' : '🔒 Locked') : slideBadge }}</span>
+      <div class="ndp-standout__badgerow">
+        <span class="ndp-standout__badge">{{ isLockedPreview ? (isUnlockingSoon ? '🔓 Unlocking Soon' : '🔒 Locked') : slideBadge }}</span>
+        <span class="ndp-standout__category">{{ activeSlide.category }}</span>
+      </div>
       <div class="ndp-standout__titlerow">
         <h3>{{ activeSlide.title }}</h3>
-        <div class="ndp-countdown" *ngIf="!isLockedPreview; else lockedCountdownTpl">
-          <strong>{{ slideCountdown.value }}</strong><span>{{ slideCountdown.label }}</span>
+        <div class="ndp-standout__ctacol">
+          <div class="ndp-countdown" *ngIf="!isLockedPreview; else lockedCountdownTpl">
+            <strong>{{ slideCountdown.value }}</strong><span>{{ slideCountdown.label }}</span>
+          </div>
+          <ng-template #lockedCountdownTpl>
+            <div class="ndp-countdown"><strong>{{ daysUntilStart }}</strong><span>days to start</span></div>
+          </ng-template>
+          <a [href]="activeSlide.link || null" [attr.target]="activeSlide.link ? '_blank' : null" [attr.rel]="activeSlide.link ? 'noopener' : null"
+            class="ndp-standout__start" [class.ndp-standout__start--disabled]="!activeSlide.link" [attr.aria-disabled]="!activeSlide.link">
+            <span>Start Learning</span>
+          </a>
         </div>
-        <ng-template #lockedCountdownTpl>
-          <div class="ndp-countdown"><strong>{{ daysUntilStart }}</strong><span>days to start</span></div>
-        </ng-template>
       </div>
       <p class="ndp-standout__tagline">
         {{ activeSlide.tagline }}
@@ -85,6 +94,11 @@
       <div class="ndp-stats__card ndp-stats__card--total reveal-up">
         <strong>{{ totalSkillsCount }}</strong>
         <span>Total</span>
+      </div>
+      <div class="ndp-stats__card ndp-stats__card--categories reveal-up">
+        <strong>{{ categories.length }}</strong>
+        <span>Categories</span>
+        <small>{{ completedCategoriesCount }} completed · {{ pendingCategoriesCount }} pending</small>
       </div>
     </div>
   </div>

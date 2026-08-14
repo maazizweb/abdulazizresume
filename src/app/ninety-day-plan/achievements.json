@@ -2,6 +2,10 @@
   {
     "id": "react",
     "title": "Modern React Js",
+    "isCourse": true,
+    "category": "Frontend Framework",
+    "status": "strengthen",
+    "note": "Listed as a skill and used once (Northsimcoephysio) — thin evidence, no modern-pattern depth yet.",
     "tagline": "The library for web interfaces — fill the specific holes the gap analysis found.",
     "focus": [
       "Modern JavaScript & TypeScript depth",
@@ -16,11 +20,16 @@
     "color": "#3D7E90",
     "background": "#3D7E90",
     "textColor": "#ffffff",
-    "courseCompletion": "Not Completed"
+    "courseCompletion": "Not Completed",
+    "link": "https://www.udemy.com/course/modern-react-from-the-beginning/?couponCode=KEEPLEARNING"
   },
   {
     "id": "nextjs",
     "title": "Next.js",
+    "isCourse": true,
+    "category": "Frontend Framework",
+    "status": "strengthen",
+    "note": "Claimed on the site, zero project evidence in the resume — needs at least one real build.",
     "tagline": "Ship a production-grade app with routing, rendering and API routes.",
     "focus": [
       "App Router & file-based routing",
@@ -35,11 +44,16 @@
     "color": "#ffffff",
     "background": "#000000",
     "textColor": "#ffffff",
-    "courseCompletion": "Not Completed"
+    "courseCompletion": "Not Completed",
+    "link": "https://nextjs.org/docs"
   },
   {
     "id": "typescript",
     "title": "TypeScript Mastery",
+    "isCourse": true,
+    "category": "Language",
+    "status": "strengthen",
+    "note": "Used across Angular projects; needs the same fluency inside React/Next.",
     "tagline": "Type everything you build — no stray `any`, no runtime surprises interviewers can poke at.",
     "focus": [
       "Strict mode, generics & utility types",
@@ -54,11 +68,232 @@
     "color": "#3178C6",
     "background": "#3178C6",
     "textColor": "#ffffff",
-    "courseCompletion": "Not Completed"
+    "courseCompletion": "Not Completed",
+    "link": "https://www.typescriptlang.org/docs/"
+  },
+  {
+    "id": "nodejs",
+    "title": "Node.js",
+    "isCourse": true,
+    "category": "Backend",
+    "status": "need",
+    "note": "No backend experience listed yet — first real Node API still to be built.",
+    "tagline": "Take your frontend skills full-stack — build and ship your own APIs.",
+    "focus": [
+      "Node runtime & module system",
+      "Express/REST API fundamentals",
+      "Authentication & middleware",
+      "Connecting to a database",
+      "Deploying a Node backend"
+    ],
+    "deliverable": "A deployed API backing one of your portfolio projects end-to-end.",
+    "logo": "assets/icons/tech/nodejs.svg",
+    "watermarkMode": "mask",
+    "color": "#339933",
+    "background": "#339933",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://nodejs.org/en/learn"
+  },
+  {
+    "id": "nestjs",
+    "title": "NestJS",
+    "isCourse": true,
+    "category": "Backend Framework",
+    "status": "need",
+    "note": "Not used before — needed to structure the Node API properly instead of a loose script.",
+    "tagline": "Structure that Node backend like a real production app, not a script.",
+    "focus": [
+      "Modules, controllers & providers",
+      "Dependency injection",
+      "DTOs & validation pipes",
+      "Guards & auth strategies",
+      "Testing a Nest application"
+    ],
+    "deliverable": "A structured NestJS API with modules, DI, and validated endpoints.",
+    "logo": "assets/icons/tech/nestjs.svg",
+    "watermarkMode": "mask",
+    "color": "#E0234E",
+    "background": "#E0234E",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://docs.nestjs.com/"
+  },
+  {
+    "id": "mongodb",
+    "title": "MongoDB",
+    "isCourse": true,
+    "category": "Database",
+    "status": "need",
+    "note": "No document-database experience on the resume yet.",
+    "tagline": "Model flexible, document-shaped data for real-world apps.",
+    "focus": [
+      "Documents, collections & schema design",
+      "CRUD operations & the aggregation pipeline",
+      "Indexing for query performance",
+      "Mongoose/ODM modeling",
+      "Connecting MongoDB to a Node/Nest API"
+    ],
+    "deliverable": "A Node/Nest API backed by a properly indexed MongoDB database.",
+    "logo": "assets/icons/tech/mongodb.svg",
+    "watermarkMode": "mask",
+    "color": "#47A248",
+    "background": "#47A248",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://www.mongodb.com/docs/manual/tutorial/getting-started/"
+  },
+  {
+    "id": "supabase",
+    "title": "Supabase",
+    "isCourse": true,
+    "category": "Backend",
+    "status": "need",
+    "note": "Not used before — a fast way to get auth + Postgres without hand-rolling it.",
+    "tagline": "A Postgres backend with auth, storage and realtime — without hand-rolling it all.",
+    "focus": [
+      "Postgres schema & row-level security",
+      "Auth & user management",
+      "Realtime subscriptions",
+      "Storage buckets",
+      "Supabase client in a React/Next app"
+    ],
+    "deliverable": "A project wired to Supabase for auth, data and storage end-to-end.",
+    "logo": "assets/icons/tech/supabase.svg",
+    "watermarkMode": "mask",
+    "color": "#3ECF8E",
+    "background": "#1C1C1C",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://supabase.com/docs"
+  },
+  {
+    "id": "neondb",
+    "title": "Neon DB",
+    "isCourse": true,
+    "category": "Database",
+    "status": "need",
+    "note": "Not used before — needed once a project moves off local Postgres.",
+    "tagline": "Serverless Postgres that branches like Git — built for modern deploy workflows.",
+    "focus": [
+      "Serverless Postgres fundamentals",
+      "Database branching per environment",
+      "Connection pooling",
+      "Migrations against a Neon instance",
+      "Wiring Neon into a deployed app"
+    ],
+    "deliverable": "A deployed app running against a branched Neon Postgres database.",
+    "logo": "assets/icons/tech/neondb.svg",
+    "watermarkMode": "mask",
+    "color": "#00E599",
+    "background": "#0D0D0D",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://neon.com/docs"
+  },
+  {
+    "id": "appwrite",
+    "title": "Appwrite",
+    "isCourse": true,
+    "category": "Backend",
+    "status": "need",
+    "note": "Not used before — an alternative BaaS worth knowing for interviews.",
+    "tagline": "Self-hostable backend-as-a-service — auth, database and functions in one box.",
+    "focus": [
+      "Collections & database rules",
+      "Auth & teams/permissions",
+      "Cloud functions",
+      "Storage & file handling",
+      "Appwrite SDK in a frontend app"
+    ],
+    "deliverable": "A frontend app fully backed by Appwrite for auth, data and storage.",
+    "logo": "assets/icons/tech/appwrite.svg",
+    "watermarkMode": "mask",
+    "color": "#FD366E",
+    "background": "#FD366E",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://appwrite.io/docs"
+  },
+  {
+    "id": "firebase",
+    "title": "Firebase",
+    "isCourse": true,
+    "category": "Backend",
+    "status": "need",
+    "note": "Not used before — common enough in job specs to be worth covering.",
+    "tagline": "Ship a backend fast with Google's managed auth, database and hosting.",
+    "focus": [
+      "Firestore data modeling",
+      "Firebase Authentication",
+      "Security rules",
+      "Cloud Functions",
+      "Hosting & deployment"
+    ],
+    "deliverable": "A live app on Firebase Hosting backed by Firestore and Auth.",
+    "logo": "assets/icons/tech/firebase.svg",
+    "watermarkMode": "mask",
+    "color": "#FFA000",
+    "background": "#FFA000",
+    "textColor": "#1B1B1B",
+    "courseCompletion": "Not Completed",
+    "link": "https://firebase.google.com/docs"
+  },
+  {
+    "id": "pocketbase",
+    "title": "PocketBase",
+    "isCourse": true,
+    "category": "Database",
+    "status": "need",
+    "note": "Not used before — useful for small, self-hosted side projects.",
+    "tagline": "One-file, self-hosted backend — database, auth and file storage included.",
+    "focus": [
+      "Collections & schema rules",
+      "Built-in auth",
+      "Realtime subscriptions",
+      "File storage",
+      "REST/SDK access from a frontend app"
+    ],
+    "deliverable": "A small project running entirely on a self-hosted PocketBase instance.",
+    "logo": "assets/icons/tech/pocketbase.svg",
+    "watermarkMode": "mask",
+    "color": "#38BDF8",
+    "background": "#0F172A",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://pocketbase.io/docs/"
+  },
+  {
+    "id": "typeorm",
+    "title": "TypeORM",
+    "isCourse": true,
+    "category": "Database",
+    "status": "need",
+    "note": "Not used before — needed to avoid hand-written SQL glue inside NestJS.",
+    "tagline": "Map TypeScript classes straight to database tables — no hand-written SQL glue.",
+    "focus": [
+      "Entities & decorators",
+      "Repositories & query builder",
+      "Relations (one-to-many, many-to-many)",
+      "Migrations",
+      "Using TypeORM inside a NestJS API"
+    ],
+    "deliverable": "A NestJS API with TypeORM entities, relations and migrations in place.",
+    "logo": "assets/icons/tech/typeorm.svg",
+    "watermarkMode": "mask",
+    "color": "#FE0803",
+    "background": "#FE0803",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://typeorm.io/"
   },
   {
     "id": "javascript",
     "title": "JavaScript",
+    "isCourse": true,
+    "category": "Language",
+    "status": "have",
+    "note": "Long-standing daily use — sharpen modern ES2020+ patterns, not fundamentals.",
     "tagline": "The language behind every framework on this list — already a proven daily driver.",
     "focus": [
       "ES2020+ syntax & modern patterns",
@@ -73,11 +308,16 @@
     "color": "#F7DF1E",
     "background": "#F7DF1E",
     "textColor": "#0D0C0B",
-    "courseCompletion": "Completed"
+    "courseCompletion": "Completed",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   {
     "id": "angular-cli",
     "title": "Angular CLI",
+    "isCourse": true,
+    "category": "Frontend Framework",
+    "status": "have",
+    "note": "Real CRM redesign, multiple production builds — a genuine strength, keep it visible.",
     "tagline": "Scaffolding, builds and project structure — the backbone of every Angular app shipped so far.",
     "focus": [
       "Project scaffolding & schematics",
@@ -92,11 +332,16 @@
     "color": "#DD0031",
     "background": "#DD0031",
     "textColor": "#ffffff",
-    "courseCompletion": "Completed"
+    "courseCompletion": "Completed",
+    "link": "https://angular.dev/tools/cli"
   },
   {
     "id": "angular-material",
     "title": "Angular Material",
+    "isCourse": true,
+    "category": "Frontend Framework",
+    "status": "have",
+    "note": "Real CRM redesign, multiple production builds — a genuine strength, keep it visible.",
     "tagline": "Consistent, accessible UI components used across real client-facing projects.",
     "focus": [
       "Material component library",
@@ -111,11 +356,16 @@
     "color": "#3F51B5",
     "background": "#3F51B5",
     "textColor": "#ffffff",
-    "courseCompletion": "Completed"
+    "courseCompletion": "Completed",
+    "link": "https://material.angular.io/"
   },
   {
     "id": "astro",
     "title": "Astro Js",
+    "isCourse": true,
+    "category": "Frontend Framework",
+    "status": "have",
+    "note": "Content-focused static sites already shipped to production.",
     "tagline": "Content-focused sites shipped fast, with minimal JS by default.",
     "focus": [
       "Islands architecture & partial hydration",
@@ -130,6 +380,194 @@
     "color": "#FF5D01",
     "background": "#13151A",
     "textColor": "#ffffff",
-    "courseCompletion": "Completed"
+    "courseCompletion": "Completed",
+    "link": "https://docs.astro.build/"
+  },
+  {
+    "id": "html5",
+    "title": "HTML5",
+    "isCourse": true,
+    "category": "Core Web",
+    "status": "have",
+    "note": "10+ years, dozens of shipped responsive sites — maintain, don’t relearn.",
+    "tagline": "Semantic, accessible markup — the foundation under every project shipped so far.",
+    "focus": [
+      "Semantic HTML & document structure",
+      "Forms & accessibility (ARIA basics)",
+      "SEO-friendly markup",
+      "Media & embeds",
+      "Cross-browser compatibility"
+    ],
+    "deliverable": "15+ shipped production projects built on solid semantic HTML.",
+    "logo": "assets/icons/tech/html5.svg",
+    "watermarkMode": "mask",
+    "color": "#E34F26",
+    "background": "#E34F26",
+    "textColor": "#ffffff",
+    "courseCompletion": "Completed",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+  },
+  {
+    "id": "css3",
+    "title": "CSS3",
+    "isCourse": true,
+    "category": "Core Web",
+    "status": "have",
+    "note": "10+ years, dozens of shipped responsive sites — maintain, don’t relearn.",
+    "tagline": "Responsive, maintainable styling across every client project delivered.",
+    "focus": [
+      "Flexbox & Grid layout",
+      "Responsive / mobile-first design",
+      "Animations & transitions",
+      "Custom properties (CSS variables)",
+      "Cross-browser styling"
+    ],
+    "deliverable": "15+ shipped production projects with fully responsive CSS.",
+    "logo": "assets/icons/tech/css3.svg",
+    "watermarkMode": "mask",
+    "color": "#1572B6",
+    "background": "#1572B6",
+    "textColor": "#ffffff",
+    "courseCompletion": "Completed",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+  },
+  {
+    "id": "bootstrap",
+    "title": "Bootstrap",
+    "isCourse": true,
+    "category": "CSS Framework",
+    "status": "have",
+    "note": "Used across multiple client projects for fast, consistent responsive layout.",
+    "tagline": "Grid system and prebuilt components used to ship client sites fast.",
+    "focus": [
+      "Grid system & responsive utilities",
+      "Prebuilt components",
+      "Theming & customization",
+      "Responsive breakpoints",
+      "Utility classes"
+    ],
+    "deliverable": "Multiple client sites built and shipped on Bootstrap.",
+    "logo": "assets/icons/tech/bootstrap.svg",
+    "watermarkMode": "mask",
+    "color": "#7952B3",
+    "background": "#7952B3",
+    "textColor": "#ffffff",
+    "courseCompletion": "Completed",
+    "link": "https://getbootstrap.com/docs/"
+  },
+  {
+    "id": "tailwindcss",
+    "title": "Tailwind CSS",
+    "isCourse": true,
+    "category": "CSS Framework",
+    "status": "have",
+    "note": "Utility-first styling already used in production builds.",
+    "tagline": "Utility-first styling for fast, consistent UI without leaving the markup.",
+    "focus": [
+      "Utility-first workflow",
+      "Responsive & state variants",
+      "Custom theming (tailwind.config)",
+      "Component extraction patterns",
+      "Dark mode utilities"
+    ],
+    "deliverable": "Production UI built and styled entirely with Tailwind utilities.",
+    "logo": "assets/icons/tech/tailwindcss.svg",
+    "watermarkMode": "mask",
+    "color": "#06B6D4",
+    "background": "#06B6D4",
+    "textColor": "#ffffff",
+    "courseCompletion": "Completed",
+    "link": "https://tailwindcss.com/docs"
+  },
+  {
+    "id": "component-architecture",
+    "title": "Component architecture",
+    "isCourse": false,
+    "status": "have",
+    "note": "Strong in Angular (reusable UI libraries); needs the React equivalent."
+  },
+  {
+    "id": "responsive-ui",
+    "title": "Responsive / mobile-first UI",
+    "isCourse": false,
+    "status": "have",
+    "note": "Demonstrated repeatedly across client projects — maintain."
+  },
+  {
+    "id": "accessibility",
+    "title": "Accessibility (WCAG)",
+    "isCourse": false,
+    "status": "strengthen",
+    "note": "Applied conceptually — needs concrete, explainable examples in a React project."
+  },
+  {
+    "id": "api-integration",
+    "title": "API integration",
+    "isCourse": false,
+    "status": "have",
+    "note": "Explicit experience wiring frontend to backend/REST across multiple roles."
+  },
+  {
+    "id": "git-workflow",
+    "title": "Git / GitHub workflow",
+    "isCourse": false,
+    "status": "have",
+    "note": "Git, Bitbucket, branching and PR experience already on record."
+  },
+  {
+    "id": "automated-testing",
+    "title": "Automated testing",
+    "isCourse": false,
+    "status": "need",
+    "note": "No Jest, RTL, or test-writing experience anywhere on the resume — a real gap for 2026 hiring bars."
+  },
+  {
+    "id": "react-state",
+    "title": "Modern React state (Context/hooks)",
+    "isCourse": false,
+    "status": "need",
+    "note": "Not evidenced — this is the core of \"can you actually build in React.\""
+  },
+  {
+    "id": "ci-cd",
+    "title": "CI/CD",
+    "isCourse": false,
+    "status": "need",
+    "note": "No pipeline experience listed — even a basic GitHub Actions deploy closes this."
+  },
+  {
+    "id": "deployment",
+    "title": "Deployment",
+    "isCourse": false,
+    "status": "strengthen",
+    "note": "Comfortable deploying (Vercel, client hosting) — extend to a CI-driven flow."
+  },
+  {
+    "id": "frontend-performance",
+    "title": "Frontend performance",
+    "isCourse": false,
+    "status": "have",
+    "note": "Genuinely strong: Lighthouse audits, code-splitting, asset optimization already on the resume."
+  },
+  {
+    "id": "interview-prep",
+    "title": "Interview preparation",
+    "isCourse": false,
+    "status": "need",
+    "note": "No structured prep visible — treat as its own skill, separate from engineering ability."
+  },
+  {
+    "id": "job-search-system",
+    "title": "Job-search system",
+    "isCourse": false,
+    "status": "need",
+    "note": "No tracked, repeatable process yet — build one instead of applying ad hoc."
+  },
+  {
+    "id": "cloud-devops",
+    "title": "Cloud & DevOps (AWS, Docker)",
+    "isCourse": false,
+    "status": "later",
+    "note": "Not needed for a frontend-focused hire in 90 days — revisit after landing the role. (Node.js itself is tracked separately above.)"
   }
 ]
