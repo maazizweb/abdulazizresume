@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Inject, NO_ERRORS_SCHEMA, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-footer',
@@ -68,6 +68,9 @@ export class FooterComponent implements AfterViewInit, OnDestroy {
           this.contactStatus = 'success';
           this.formData = { name: '', email: '', message: '' }; // Reset form
           form.resetForm();
+          if (isPlatformBrowser(this.platformId)) {
+            setTimeout(() => window.location.reload(), 3000);
+          }
         },
         (error) => {
           console.log('FAILED...', error);
