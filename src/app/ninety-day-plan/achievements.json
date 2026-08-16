@@ -288,6 +288,30 @@
     "link": "https://typeorm.io/"
   },
   {
+    "id": "react-native",
+    "title": "React Native",
+    "isCourse": true,
+    "category": "Mobile Framework",
+    "status": "need",
+    "note": "Not started — queued after the top 3 priority courses.",
+    "tagline": "Take React skills mobile — one codebase, native iOS and Android apps.",
+    "focus": [
+      "Core components & navigation",
+      "Styling & responsive layout on mobile",
+      "Native APIs & device features",
+      "State management on mobile",
+      "Building & shipping to app stores"
+    ],
+    "deliverable": "A cross-platform mobile app built and shipped with React Native.",
+    "logo": "assets/icons/tech/react.svg",
+    "watermarkMode": "mask",
+    "color": "#61DAFB",
+    "background": "#20232A",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://reactnative.dev/docs/getting-started"
+  },
+  {
     "id": "javascript",
     "title": "JavaScript",
     "isCourse": true,
