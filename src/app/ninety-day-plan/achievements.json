@@ -48,6 +48,30 @@
     "link": "https://nextjs.org/docs"
   },
   {
+    "id": "tanstack-start",
+    "title": "TanStack Start",
+    "isCourse": true,
+    "category": "Frontend Framework",
+    "status": "need",
+    "note": "Not used before — a full-stack React alternative to Next.js worth knowing for interviews.",
+    "tagline": "Full-stack React framework built on TanStack Router — type-safe from routing to server functions.",
+    "focus": [
+      "File-based & type-safe routing",
+      "Server functions & server-side rendering",
+      "Data loading with TanStack Query",
+      "Middleware & API routes",
+      "Deploying a TanStack Start app"
+    ],
+    "deliverable": "A deployed TanStack Start app demonstrating type-safe routing and SSR.",
+    "logo": "assets/icons/tech/tanstack.svg",
+    "watermarkMode": "mask",
+    "color": "#EF4444",
+    "background": "#EF4444",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://tanstack.com/start/latest/docs/framework/react/overview"
+  },
+  {
     "id": "typescript",
     "title": "TypeScript Mastery",
     "isCourse": true,
