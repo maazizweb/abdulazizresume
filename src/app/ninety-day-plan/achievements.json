@@ -312,6 +312,30 @@
     "link": "https://typeorm.io/"
   },
   {
+    "id": "devops-frontend",
+    "title": "DevOps for Frontend Developer",
+    "isCourse": true,
+    "category": "DevOps",
+    "status": "need",
+    "note": "Not started — closes the CI/CD and deployment-pipeline gap flagged in the analysis.",
+    "tagline": "CI/CD, containers and deployment pipelines built for frontend engineers, not ops specialists.",
+    "focus": [
+      "CI/CD pipelines (GitHub Actions)",
+      "Docker for frontend apps",
+      "Environment & secrets management",
+      "Automated testing in pipelines",
+      "Cloud deployment workflows"
+    ],
+    "deliverable": "A frontend project with an automated CI/CD pipeline from commit to deploy.",
+    "logo": "assets/icons/tech/github.svg",
+    "watermarkMode": "mask",
+    "color": "#ffffff",
+    "background": "#181717",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "#"
+  },
+  {
     "id": "react-native",
     "title": "React Native",
     "isCourse": true,
