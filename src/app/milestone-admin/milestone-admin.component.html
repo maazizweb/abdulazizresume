@@ -1,0 +1,63 @@
+<section class="ma-section space-y-top space-y-bottom">
+  <div class="container">
+    <div class="section-heading text-center">
+      <span>Admin</span>
+      <h2>Milestone <span class="text_gradient">Admin</span></h2>
+      <p class="mx-auto">All {{ allAchievements.length }} tracked skills and courses — search and filter below.</p>
+    </div>
+
+    <div class="ma-controls">
+      <div class="ma-search">
+        <i class="bi bi-search"></i>
+        <input type="text" [(ngModel)]="search" (ngModelChange)="onFilterChange()" placeholder="Search by title, category or note…" />
+      </div>
+      <div class="ma-status-filter">
+        <button type="button" *ngFor="let s of statusOptions" class="ma-status-chip" [class.active]="statusFilter === s"
+          (click)="statusFilter = s; onFilterChange()">
+          {{ s === 'all' ? 'All' : statusMeta[s].label }}
+        </button>
+      </div>
+    </div>
+
+    <p class="ma-count">{{ filtered.length }} result{{ filtered.length === 1 ? '' : 's' }}</p>
+
+    <div class="ma-grid" *ngIf="paged.length; else emptyTpl">
+      <div class="ma-card" *ngFor="let a of paged" [style.--ma-accent]="a.color || '#F55837'">
+        <div class="ma-card__top">
+          <div class="ma-card__logo" *ngIf="a.logo" [style.background]="a.background || '#fff'">
+            <img [src]="a.logo" [alt]="a.title" />
+          </div>
+          <span class="ma-status-badge" [class]="'is-' + a.status">{{ statusMeta[a.status].dot }} {{ statusMeta[a.status].label }}</span>
+        </div>
+
+        <h3 class="ma-card__title">{{ a.title }}</h3>
+        <span class="ma-card__category" *ngIf="a.category">{{ a.category }}</span>
+
+        <p class="ma-card__note">{{ a.note }}</p>
+
+        <p class="ma-card__tagline" *ngIf="a.tagline">{{ a.tagline }}</p>
+
+        <ul class="ma-card__focus" *ngIf="a.focus?.length">
+          <li *ngFor="let f of a.focus">{{ f }}</li>
+        </ul>
+
+        <div class="ma-card__footer">
+          <span class="ma-card__pill" *ngIf="a.isCourse">{{ a.courseCompletion }}</span>
+          <a *ngIf="a.link && a.link !== '#'" [href]="a.link" target="_blank" rel="noopener" class="ma-card__link">
+            View <i class="bi bi-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #emptyTpl>
+      <div class="ma-empty">No results match your search.</div>
+    </ng-template>
+
+    <div class="ma-pagination" *ngIf="totalPages > 1">
+      <button type="button" class="ma-page-btn" [disabled]="page === 1" (click)="goToPage(page - 1)"><i class="bi bi-chevron-left"></i></button>
+      <button type="button" class="ma-page-btn" *ngFor="let p of pageNumbers" [class.active]="p === page" (click)="goToPage(p)">{{ p }}</button>
+      <button type="button" class="ma-page-btn" [disabled]="page === totalPages" (click)="goToPage(page + 1)"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
