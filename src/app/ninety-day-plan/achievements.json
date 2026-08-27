@@ -333,7 +333,31 @@
     "background": "#181717",
     "textColor": "#ffffff",
     "courseCompletion": "Not Completed",
-    "link": "#"
+    "link": "https://www.youtube.com/watch?v=caJZqWTU7j8&list=PLB8Fuyg-ZZ04"
+  },
+  {
+    "id": "github-actions",
+    "title": "GitHub Actions",
+    "isCourse": true,
+    "category": "DevOps",
+    "status": "need",
+    "note": "Not started — CI/CD automation directly inside GitHub, pairs with the DevOps course above.",
+    "tagline": "Automate builds, tests and deployments straight from a GitHub repo — no external CI service needed.",
+    "focus": [
+      "Workflow syntax & triggers",
+      "Jobs, steps & runners",
+      "Secrets & environment variables",
+      "Caching & artifacts",
+      "Automated build, test & deploy pipelines"
+    ],
+    "deliverable": "A repo with a working CI/CD workflow that builds, tests and deploys on push.",
+    "logo": "assets/icons/tech/github.svg",
+    "watermarkMode": "mask",
+    "color": "#ffffff",
+    "background": "#181717",
+    "textColor": "#ffffff",
+    "courseCompletion": "Not Completed",
+    "link": "https://www.youtube.com/watch?v=y7S2oSjJ8PA&t=1870s"
   },
   {
     "id": "react-native",
