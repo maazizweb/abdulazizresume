@@ -1,0 +1,83 @@
+.projects-domains-style-one {
+  position: relative;
+}
+
+.domains-count-badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--color-brand);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.domains-search {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 32px auto 0;
+  padding: 12px 18px;
+  border: 1px solid rgba(13, 12, 11, 0.15);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: var(--ff-red-hat);
+}
+
+.domains-empty {
+  text-align: center;
+  margin-top: 40px;
+  color: var(--color-black);
+  opacity: 0.6;
+}
+
+.domains-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.domain-card {
+  display: block;
+  background: #fff;
+  box-shadow: 0px 4px 12px 0px rgba(13, 12, 11, 0.1);
+  padding: 24px 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.domain-card__title {
+  display: block;
+  font-family: var(--ff-red-hat);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-black);
+  transition: color 0.3s ease;
+}
+
+.domain-card__url {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--color-black);
+  opacity: 0.6;
+  word-break: break-all;
+}
+
+.domain-card:hover {
+  box-shadow: 0px 6px 14px 0px rgba(13, 12, 11, 0.2);
+  transform: translateY(-6px);
+}
+
+.domain-card:hover .domain-card__title {
+  color: var(--color-brand);
+}
+
+@media screen and (max-width: 480px) {
+  .domains-grid {
+    grid-template-columns: 1fr;
+  }
+}

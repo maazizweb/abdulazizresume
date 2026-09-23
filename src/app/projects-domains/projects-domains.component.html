@@ -1,0 +1,24 @@
+<!-- ============= Projects Domains Style Start ============= -->
+<section class="projects-domains-style-one space-y-top space-y-bottom">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>Project Domains <span class="domains-count-badge">{{ filteredProjects.length }}<ng-container *ngIf="search"> / {{ projects.length }}</ng-container></span></h2>
+            <p class="mx-auto">Live domains for projects I've built and shipped.</p>
+        </div>
+
+        <input class="domains-search" type="search" placeholder="Search by title or url…" [(ngModel)]="search"
+            *ngIf="projects.length" />
+
+        <p class="domains-empty" *ngIf="!loading && !projects.length">No domains yet.</p>
+        <p class="domains-empty" *ngIf="projects.length && !filteredProjects.length">No matches for "{{ search }}".</p>
+
+        <div class="domains-grid" *ngIf="filteredProjects.length">
+            <a *ngFor="let project of filteredProjects" class="domain-card" [href]="project.url" target="_blank"
+                rel="noopener noreferrer">
+                <span class="domain-card__title">{{ domainName(project.url) }}</span>
+                <span class="domain-card__url">{{ project.url }}</span>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- ============= Projects Domains Style End ============= -->
