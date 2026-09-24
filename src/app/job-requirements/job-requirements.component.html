@@ -1,0 +1,21 @@
+<!-- ============= Job Requirements Style Start ============= -->
+<section class="job-requirements-style-one space-y-top space-y-bottom">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>Job Requirements <span class="jobs-count-badge">{{ jobs.length }}</span></h2>
+        </div>
+
+        <p class="jobs-empty" *ngIf="!loading && !jobs.length">No job requirements yet.</p>
+
+        <div class="jobs-grid" *ngIf="jobs.length">
+            <div class="job-card" *ngFor="let job of jobs">
+                <img *ngFor="let src of imageUrls(job)" [src]="src" alt="Job requirement" (click)="previewSrc = src" />
+            </div>
+        </div>
+    </div>
+
+    <div class="jobs-lightbox" *ngIf="previewSrc" (click)="previewSrc = null">
+        <img [src]="previewSrc" alt="Job requirement" />
+    </div>
+</section>
+<!-- ============= Job Requirements Style End ============= -->

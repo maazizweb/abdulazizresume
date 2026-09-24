@@ -4,6 +4,7 @@ import { ProudlyWorkedWithComponent } from './proudly-worked-with/proudly-worked
 import { NinetyDayPlanComponent } from './ninety-day-plan/ninety-day-plan.component';
 import { MilestoneAdminComponent } from './milestone-admin/milestone-admin.component';
 import { ProjectsDomainsComponent } from './projects-domains/projects-domains.component';
+import { JobRequirementsComponent } from './job-requirements/job-requirements.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'milestones', component: NinetyDayPlanComponent },
   { path: 'milestone-admin', component: MilestoneAdminComponent },
   { path: 'projects-domains', component: ProjectsDomainsComponent },
+  { path: 'job-requirements', component: JobRequirementsComponent },
   { path: '**', redirectTo: '' },
 ];
