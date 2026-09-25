@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: 'proudly-worked-with', component: ProudlyWorkedWithComponent },
   { path: 'milestones', component: NinetyDayPlanComponent },
   { path: 'milestone-admin', component: MilestoneAdminComponent },
-  { path: 'projects-domains', component: ProjectsDomainsComponent },
+  { path: 'domains', component: ProjectsDomainsComponent },
   { path: 'job-requirements', component: JobRequirementsComponent },
   { path: '**', redirectTo: '' },
 ];
