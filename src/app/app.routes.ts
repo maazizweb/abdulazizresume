@@ -5,9 +5,11 @@ import { NinetyDayPlanComponent } from './ninety-day-plan/ninety-day-plan.compon
 import { MilestoneAdminComponent } from './milestone-admin/milestone-admin.component';
 import { ProjectsDomainsComponent } from './projects-domains/projects-domains.component';
 import { JobRequirementsComponent } from './job-requirements/job-requirements.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'proudly-worked-with', component: ProudlyWorkedWithComponent },
   { path: 'milestones', component: NinetyDayPlanComponent },
   { path: 'milestone-admin', component: MilestoneAdminComponent },
